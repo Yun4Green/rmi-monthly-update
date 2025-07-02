@@ -1,0 +1,2889 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮胎相关商品价格指数可视化 / Tire-Related Commodity Price Index Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-title {
+            font-size: 0.9em;
+            color: #666;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+        
+        .card-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin: 0 0 8px 0;
+            color: #FF6B6B;
+        }
+        
+        .card-meta {
+            font-size: 0.8em;
+            color: #888;
+            margin: 0 0 10px 0;
+        }
+        
+        .card-change {
+            font-size: 1em;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .change-positive {
+            color: #4CAF50;
+        }
+        
+        .change-negative {
+            color: #F44336;
+        }
+        
+        .change-neutral {
+            color: #FF9800;
+        }
+        
+        .chart-container {
+            padding: 30px;
+            background: white;
+        }
+        
+        .chart-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.5em;
+            color: #333;
+        }
+        
+        #commodityChart {
+            max-height: 500px;
+        }
+        
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+        
+        .trend-arrow {
+            font-size: 1.2em;
+            margin-left: 8px;
+        }
+        
+        .source-links {
+            margin-top: 10px;
+        }
+        
+        .source-links a {
+            color: #4ECDC4;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        .source-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>轮胎相关商品价格指数分析</h1>
+            <p>Tire-Related Commodity Price Index Analysis Dashboard</p>
+        </div>
+        
+        <div class="cards-container">
+            <div class="card">
+                <h3 class="card-title">轮胎帘子布生产者价格指数</h3>
+                <div class="card-value">119.81</div>
+                <p class="card-meta">2025年5月 | 基准指数</p>
+                <div style="display: flex; justify-content: space-between; margin-top: 15px;">
+                    <div>
+                        <small style="color: #666;">环比 MoM</small>
+                        <p class="card-change change-positive" style="margin: 2px 0;">
+                            +4.80% <span class="trend-arrow">↗️</span>
+                        </p>
+                    </div>
+                    <div>
+                        <small style="color: #666;">同比 YoY</small>
+                        <p class="card-change change-positive" style="margin: 2px 0;">
+                            +5.12% <span class="trend-arrow">↗️</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h3 class="card-title">合成橡胶制造</h3>
+                <div class="card-value">278.62</div>
+                <p class="card-meta">2025年5月 | 基准指数</p>
+                <div style="display: flex; justify-content: space-between; margin-top: 15px;">
+                    <div>
+                        <small style="color: #666;">环比 MoM</small>
+                        <p class="card-change change-negative" style="margin: 2px 0;">
+                            -1.34% <span class="trend-arrow">↘️</span>
+                        </p>
+                    </div>
+                    <div>
+                        <small style="color: #666;">同比 YoY</small>
+                        <p class="card-change change-positive" style="margin: 2px 0;">
+                            +4.44% <span class="trend-arrow">↗️</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h3 class="card-title">塑料原料和树脂制造</h3>
+                <div class="card-value">324.58</div>
+                <p class="card-meta">2025年5月 | 基准指数</p>
+                <div style="display: flex; justify-content: space-between; margin-top: 15px;">
+                    <div>
+                        <small style="color: #666;">环比 MoM</small>
+                        <p class="card-change change-negative" style="margin: 2px 0;">
+                            -0.89% <span class="trend-arrow">↘️</span>
+                        </p>
+                    </div>
+                    <div>
+                        <small style="color: #666;">同比 YoY</small>
+                        <p class="card-change change-positive" style="margin: 2px 0;">
+                            +0.99% <span class="trend-arrow">↗️</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h3 class="card-title">其他制造金属丝产品</h3>
+                <div class="card-value">360.98</div>
+                <p class="card-meta">2025年5月 | 基准指数</p>
+                <div style="display: flex; justify-content: space-between; margin-top: 15px;">
+                    <div>
+                        <small style="color: #666;">环比 MoM</small>
+                        <p class="card-change change-positive" style="margin: 2px 0;">
+                            +0.94% <span class="trend-arrow">↗️</span>
+                        </p>
+                    </div>
+                    <div>
+                        <small style="color: #666;">同比 YoY</small>
+                        <p class="card-change change-positive" style="margin: 2px 0;">
+                            +7.28% <span class="trend-arrow">↗️</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h3 class="card-title">炭黑制造</h3>
+                <div class="card-value">588.98</div>
+                <p class="card-meta">2025年5月 | 基准指数</p>
+                <div style="display: flex; justify-content: space-between; margin-top: 15px;">
+                    <div>
+                        <small style="color: #666;">环比 MoM</small>
+                        <p class="card-change change-negative" style="margin: 2px 0;">
+                            -1.26% <span class="trend-arrow">↘️</span>
+                        </p>
+                    </div>
+                    <div>
+                        <small style="color: #666;">同比 YoY</small>
+                        <p class="card-change change-negative" style="margin: 2px 0;">
+                            -3.63% <span class="trend-arrow">↘️</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <h2 class="chart-title">轮胎相关商品价格指数趋势图 / Tire-Related Commodity Price Index Trend Chart</h2>
+            <canvas id="commodityChart"></canvas>
+        </div>
+        
+        <div class="footer">
+            <p>数据来源 / Data Sources:</p>
+            <div class="source-links">
+                <a href="https://fred.stlouisfed.org/series/PCU314994314994" target="_blank">FRED - Producer Price Index by Industry: Rope, Twine, Tire Cord, and Tire Fabric Mills</a>
+                <a href="https://data.bls.gov/toppicks?survey=pc" target="_blank">BLS - Producer Price Index Industry Data</a>
+                <a href="https://www.worldbank.org/en/research/commodity-markets" target="_blank">World Bank - Commodity Markets Research</a>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.8em; color: #ccc;">
+                <strong>数据说明 / Data Description:</strong><br>
+                • FRED数据: 轮胎帘子布生产者价格指数 (基准期: 2011年12月=100) / FRED Data: Tire Cord Producer Price Index (Base: Dec 2011=100)<br>
+                • BLS数据: 相关制造业生产者价格指数 / BLS Data: Related Manufacturing Producer Price Indexes<br>
+                • 世界银行: 全球商品市场研究与价格监测 / World Bank: Global Commodity Markets Research & Price Monitoring
+            </p>
+            <p style="margin-top: 10px;">生成时间 / Generated: 2025-07-02 12:59:56</p>
+        </div>
+    </div>
+
+    <script>
+        // 图表配置和数据
+        const ctx = document.getElementById('commodityChart').getContext('2d');
+        const chartDatasets = [
+        {
+                "label": "\u8f6e\u80ce\u5e18\u5b50\u5e03\u751f\u4ea7\u8005\u4ef7\u683c\u6307\u6570",
+                "data": [
+                        {
+                                "x": "2015-01",
+                                "y": 98.7
+                        },
+                        {
+                                "x": "2015-02",
+                                "y": 98.6
+                        },
+                        {
+                                "x": "2015-03",
+                                "y": 98.0
+                        },
+                        {
+                                "x": "2015-04",
+                                "y": 97.4
+                        },
+                        {
+                                "x": "2015-05",
+                                "y": 96.2
+                        },
+                        {
+                                "x": "2015-06",
+                                "y": 96.5
+                        },
+                        {
+                                "x": "2015-07",
+                                "y": 95.8
+                        },
+                        {
+                                "x": "2015-08",
+                                "y": 95.7
+                        },
+                        {
+                                "x": "2015-09",
+                                "y": 95.9
+                        },
+                        {
+                                "x": "2015-10",
+                                "y": 95.9
+                        },
+                        {
+                                "x": "2015-11",
+                                "y": 95.3
+                        },
+                        {
+                                "x": "2015-12",
+                                "y": 95.1
+                        },
+                        {
+                                "x": "2016-01",
+                                "y": 94.3
+                        },
+                        {
+                                "x": "2016-02",
+                                "y": 94.1
+                        },
+                        {
+                                "x": "2016-03",
+                                "y": 94.0
+                        },
+                        {
+                                "x": "2016-04",
+                                "y": 93.8
+                        },
+                        {
+                                "x": "2016-05",
+                                "y": 93.5
+                        },
+                        {
+                                "x": "2016-06",
+                                "y": 93.6
+                        },
+                        {
+                                "x": "2016-07",
+                                "y": 93.6
+                        },
+                        {
+                                "x": "2016-08",
+                                "y": 93.6
+                        },
+                        {
+                                "x": "2016-09",
+                                "y": 93.5
+                        },
+                        {
+                                "x": "2016-10",
+                                "y": 93.5
+                        },
+                        {
+                                "x": "2016-11",
+                                "y": 93.7
+                        },
+                        {
+                                "x": "2016-12",
+                                "y": 93.8
+                        },
+                        {
+                                "x": "2017-01",
+                                "y": 92.1
+                        },
+                        {
+                                "x": "2017-02",
+                                "y": 92.0
+                        },
+                        {
+                                "x": "2017-03",
+                                "y": 91.7
+                        },
+                        {
+                                "x": "2017-04",
+                                "y": 92.4
+                        },
+                        {
+                                "x": "2017-05",
+                                "y": 92.6
+                        },
+                        {
+                                "x": "2017-06",
+                                "y": 92.8
+                        },
+                        {
+                                "x": "2017-07",
+                                "y": 93.6
+                        },
+                        {
+                                "x": "2017-08",
+                                "y": 93.5
+                        },
+                        {
+                                "x": "2017-09",
+                                "y": 93.4
+                        },
+                        {
+                                "x": "2017-10",
+                                "y": 93.7
+                        },
+                        {
+                                "x": "2017-11",
+                                "y": 93.3
+                        },
+                        {
+                                "x": "2017-12",
+                                "y": 93.3
+                        },
+                        {
+                                "x": "2018-01",
+                                "y": 94.6
+                        },
+                        {
+                                "x": "2018-02",
+                                "y": 95.1
+                        },
+                        {
+                                "x": "2018-03",
+                                "y": 95.3
+                        },
+                        {
+                                "x": "2018-04",
+                                "y": 95.0
+                        },
+                        {
+                                "x": "2018-05",
+                                "y": 95.7
+                        },
+                        {
+                                "x": "2018-06",
+                                "y": 95.8
+                        },
+                        {
+                                "x": "2018-07",
+                                "y": 95.8
+                        },
+                        {
+                                "x": "2018-08",
+                                "y": 95.9
+                        },
+                        {
+                                "x": "2018-09",
+                                "y": 95.9
+                        },
+                        {
+                                "x": "2018-10",
+                                "y": 96.1
+                        },
+                        {
+                                "x": "2018-11",
+                                "y": 96.8
+                        },
+                        {
+                                "x": "2018-12",
+                                "y": 96.7
+                        },
+                        {
+                                "x": "2019-01",
+                                "y": 97.1
+                        },
+                        {
+                                "x": "2019-02",
+                                "y": 94.7
+                        },
+                        {
+                                "x": "2019-03",
+                                "y": 94.1
+                        },
+                        {
+                                "x": "2019-04",
+                                "y": 94.2
+                        },
+                        {
+                                "x": "2019-05",
+                                "y": 93.1
+                        },
+                        {
+                                "x": "2019-06",
+                                "y": 93.0
+                        },
+                        {
+                                "x": "2019-07",
+                                "y": 92.9
+                        },
+                        {
+                                "x": "2019-08",
+                                "y": 92.2
+                        },
+                        {
+                                "x": "2019-09",
+                                "y": 92.1
+                        },
+                        {
+                                "x": "2019-10",
+                                "y": 92.0
+                        },
+                        {
+                                "x": "2019-11",
+                                "y": 91.8
+                        },
+                        {
+                                "x": "2019-12",
+                                "y": 91.6
+                        },
+                        {
+                                "x": "2020-01",
+                                "y": 91.5
+                        },
+                        {
+                                "x": "2020-02",
+                                "y": 90.1
+                        },
+                        {
+                                "x": "2020-03",
+                                "y": 90.1
+                        },
+                        {
+                                "x": "2020-04",
+                                "y": 90.1
+                        },
+                        {
+                                "x": "2020-05",
+                                "y": 90.0
+                        },
+                        {
+                                "x": "2020-06",
+                                "y": 90.9
+                        },
+                        {
+                                "x": "2020-07",
+                                "y": 90.9
+                        },
+                        {
+                                "x": "2020-08",
+                                "y": 89.9
+                        },
+                        {
+                                "x": "2020-09",
+                                "y": 89.9
+                        },
+                        {
+                                "x": "2020-10",
+                                "y": 90.5
+                        },
+                        {
+                                "x": "2020-11",
+                                "y": 90.9
+                        },
+                        {
+                                "x": "2020-12",
+                                "y": 91.4
+                        },
+                        {
+                                "x": "2021-01",
+                                "y": 91.3
+                        },
+                        {
+                                "x": "2021-02",
+                                "y": 90.5
+                        },
+                        {
+                                "x": "2021-03",
+                                "y": 90.8
+                        },
+                        {
+                                "x": "2021-04",
+                                "y": 91.5
+                        },
+                        {
+                                "x": "2021-05",
+                                "y": 95.6
+                        },
+                        {
+                                "x": "2021-06",
+                                "y": 95.9
+                        },
+                        {
+                                "x": "2021-07",
+                                "y": 97.525
+                        },
+                        {
+                                "x": "2021-08",
+                                "y": 105.975
+                        },
+                        {
+                                "x": "2021-09",
+                                "y": 106.591
+                        },
+                        {
+                                "x": "2021-10",
+                                "y": 108.245
+                        },
+                        {
+                                "x": "2021-11",
+                                "y": 110.569
+                        },
+                        {
+                                "x": "2021-12",
+                                "y": 110.588
+                        },
+                        {
+                                "x": "2022-01",
+                                "y": 112.595
+                        },
+                        {
+                                "x": "2022-02",
+                                "y": 116.753
+                        },
+                        {
+                                "x": "2022-03",
+                                "y": 116.845
+                        },
+                        {
+                                "x": "2022-04",
+                                "y": 117.672
+                        },
+                        {
+                                "x": "2022-05",
+                                "y": 119.472
+                        },
+                        {
+                                "x": "2022-06",
+                                "y": 119.52
+                        },
+                        {
+                                "x": "2022-07",
+                                "y": 120.434
+                        },
+                        {
+                                "x": "2022-08",
+                                "y": 122.155
+                        },
+                        {
+                                "x": "2022-09",
+                                "y": 122.313
+                        },
+                        {
+                                "x": "2022-10",
+                                "y": 121.088
+                        },
+                        {
+                                "x": "2022-11",
+                                "y": 118.417
+                        },
+                        {
+                                "x": "2022-12",
+                                "y": 118.214
+                        },
+                        {
+                                "x": "2023-01",
+                                "y": 119.581
+                        },
+                        {
+                                "x": "2023-02",
+                                "y": 117.633
+                        },
+                        {
+                                "x": "2023-03",
+                                "y": 117.552
+                        },
+                        {
+                                "x": "2023-04",
+                                "y": 116.794
+                        },
+                        {
+                                "x": "2023-05",
+                                "y": 115.674
+                        },
+                        {
+                                "x": "2023-06",
+                                "y": 115.79
+                        },
+                        {
+                                "x": "2023-07",
+                                "y": 115.04
+                        },
+                        {
+                                "x": "2023-08",
+                                "y": 115.625
+                        },
+                        {
+                                "x": "2023-09",
+                                "y": 115.483
+                        },
+                        {
+                                "x": "2023-10",
+                                "y": 114.656
+                        },
+                        {
+                                "x": "2023-11",
+                                "y": 115.049
+                        },
+                        {
+                                "x": "2023-12",
+                                "y": 114.917
+                        },
+                        {
+                                "x": "2024-01",
+                                "y": 115.763
+                        },
+                        {
+                                "x": "2024-02",
+                                "y": 113.722
+                        },
+                        {
+                                "x": "2024-03",
+                                "y": 113.994
+                        },
+                        {
+                                "x": "2024-04",
+                                "y": 114.023
+                        },
+                        {
+                                "x": "2024-05",
+                                "y": 113.979
+                        },
+                        {
+                                "x": "2024-06",
+                                "y": 114.406
+                        },
+                        {
+                                "x": "2024-07",
+                                "y": 114.049
+                        },
+                        {
+                                "x": "2024-08",
+                                "y": 113.006
+                        },
+                        {
+                                "x": "2024-09",
+                                "y": 113.127
+                        },
+                        {
+                                "x": "2024-10",
+                                "y": 112.746
+                        },
+                        {
+                                "x": "2024-11",
+                                "y": 111.814
+                        },
+                        {
+                                "x": "2024-12",
+                                "y": 111.444
+                        },
+                        {
+                                "x": "2025-01",
+                                "y": 111.835
+                        },
+                        {
+                                "x": "2025-02",
+                                "y": 112.068
+                        },
+                        {
+                                "x": "2025-03",
+                                "y": 112.177
+                        },
+                        {
+                                "x": "2025-04",
+                                "y": 114.327
+                        },
+                        {
+                                "x": "2025-05",
+                                "y": 119.815
+                        }
+                ],
+                "borderColor": "#FF6384",
+                "backgroundColor": "#FF638420",
+                "fill": false,
+                "tension": 0.4
+        },
+        {
+                "label": "\u5408\u6210\u6a61\u80f6\u5236\u9020",
+                "data": [
+                        {
+                                "x": "2015-01",
+                                "y": 226.5
+                        },
+                        {
+                                "x": "2015-02",
+                                "y": 214.5
+                        },
+                        {
+                                "x": "2015-03",
+                                "y": 211.9
+                        },
+                        {
+                                "x": "2015-04",
+                                "y": 210.8
+                        },
+                        {
+                                "x": "2015-05",
+                                "y": 210.2
+                        },
+                        {
+                                "x": "2015-06",
+                                "y": 214.6
+                        },
+                        {
+                                "x": "2015-07",
+                                "y": 218.8
+                        },
+                        {
+                                "x": "2015-08",
+                                "y": 217.3
+                        },
+                        {
+                                "x": "2015-09",
+                                "y": 218.2
+                        },
+                        {
+                                "x": "2015-10",
+                                "y": 215.7
+                        },
+                        {
+                                "x": "2015-11",
+                                "y": 212.3
+                        },
+                        {
+                                "x": "2015-12",
+                                "y": 209.6
+                        },
+                        {
+                                "x": "2016-01",
+                                "y": 206.8
+                        },
+                        {
+                                "x": "2016-02",
+                                "y": 203.8
+                        },
+                        {
+                                "x": "2016-03",
+                                "y": 203.0
+                        },
+                        {
+                                "x": "2016-04",
+                                "y": 205.6
+                        },
+                        {
+                                "x": "2016-05",
+                                "y": 208.6
+                        },
+                        {
+                                "x": "2016-06",
+                                "y": 210.9
+                        },
+                        {
+                                "x": "2016-07",
+                                "y": 210.7
+                        },
+                        {
+                                "x": "2016-08",
+                                "y": 210.0
+                        },
+                        {
+                                "x": "2016-09",
+                                "y": 213.1
+                        },
+                        {
+                                "x": "2016-10",
+                                "y": 215.7
+                        },
+                        {
+                                "x": "2016-11",
+                                "y": 220.2
+                        },
+                        {
+                                "x": "2016-12",
+                                "y": 220.2
+                        },
+                        {
+                                "x": "2017-01",
+                                "y": 225.9
+                        },
+                        {
+                                "x": "2017-02",
+                                "y": 247.3
+                        },
+                        {
+                                "x": "2017-03",
+                                "y": 261.9
+                        },
+                        {
+                                "x": "2017-04",
+                                "y": 256.6
+                        },
+                        {
+                                "x": "2017-05",
+                                "y": 235.3
+                        },
+                        {
+                                "x": "2017-06",
+                                "y": 231.7
+                        },
+                        {
+                                "x": "2017-07",
+                                "y": 218.5
+                        },
+                        {
+                                "x": "2017-08",
+                                "y": 213.4
+                        },
+                        {
+                                "x": "2017-09",
+                                "y": 213.9
+                        },
+                        {
+                                "x": "2017-10",
+                                "y": 219.7
+                        },
+                        {
+                                "x": "2017-11",
+                                "y": 216.5
+                        },
+                        {
+                                "x": "2017-12",
+                                "y": 213.2
+                        },
+                        {
+                                "x": "2018-01",
+                                "y": 216.6
+                        },
+                        {
+                                "x": "2018-02",
+                                "y": 218.1
+                        },
+                        {
+                                "x": "2018-03",
+                                "y": 228.0
+                        },
+                        {
+                                "x": "2018-04",
+                                "y": 233.4
+                        },
+                        {
+                                "x": "2018-05",
+                                "y": 238.1
+                        },
+                        {
+                                "x": "2018-06",
+                                "y": 242.3
+                        },
+                        {
+                                "x": "2018-07",
+                                "y": 240.4
+                        },
+                        {
+                                "x": "2018-08",
+                                "y": 243.9
+                        },
+                        {
+                                "x": "2018-09",
+                                "y": 245.1
+                        },
+                        {
+                                "x": "2018-10",
+                                "y": 246.4
+                        },
+                        {
+                                "x": "2018-11",
+                                "y": 239.2
+                        },
+                        {
+                                "x": "2018-12",
+                                "y": 231.0
+                        },
+                        {
+                                "x": "2019-01",
+                                "y": 228.9
+                        },
+                        {
+                                "x": "2019-02",
+                                "y": 228.8
+                        },
+                        {
+                                "x": "2019-03",
+                                "y": 228.6
+                        },
+                        {
+                                "x": "2019-04",
+                                "y": 230.7
+                        },
+                        {
+                                "x": "2019-05",
+                                "y": 230.6
+                        },
+                        {
+                                "x": "2019-06",
+                                "y": 228.0
+                        },
+                        {
+                                "x": "2019-07",
+                                "y": 225.9
+                        },
+                        {
+                                "x": "2019-08",
+                                "y": 223.1
+                        },
+                        {
+                                "x": "2019-09",
+                                "y": 222.7
+                        },
+                        {
+                                "x": "2019-10",
+                                "y": 221.9
+                        },
+                        {
+                                "x": "2019-11",
+                                "y": 220.1
+                        },
+                        {
+                                "x": "2019-12",
+                                "y": 216.1
+                        },
+                        {
+                                "x": "2020-01",
+                                "y": 219.7
+                        },
+                        {
+                                "x": "2020-02",
+                                "y": 221.9
+                        },
+                        {
+                                "x": "2020-03",
+                                "y": 218.8
+                        },
+                        {
+                                "x": "2020-04",
+                                "y": 208.0
+                        },
+                        {
+                                "x": "2020-05",
+                                "y": 202.8
+                        },
+                        {
+                                "x": "2020-06",
+                                "y": 200.7
+                        },
+                        {
+                                "x": "2020-07",
+                                "y": 200.0
+                        },
+                        {
+                                "x": "2020-08",
+                                "y": 201.0
+                        },
+                        {
+                                "x": "2020-09",
+                                "y": 203.5
+                        },
+                        {
+                                "x": "2020-10",
+                                "y": 207.4
+                        },
+                        {
+                                "x": "2020-11",
+                                "y": 210.8
+                        },
+                        {
+                                "x": "2020-12",
+                                "y": 217.1
+                        },
+                        {
+                                "x": "2021-01",
+                                "y": 219.5
+                        },
+                        {
+                                "x": "2021-02",
+                                "y": 216.5
+                        },
+                        {
+                                "x": "2021-03",
+                                "y": 219.1
+                        },
+                        {
+                                "x": "2021-04",
+                                "y": 227.4
+                        },
+                        {
+                                "x": "2021-05",
+                                "y": 234.6
+                        },
+                        {
+                                "x": "2021-06",
+                                "y": 241.6
+                        },
+                        {
+                                "x": "2021-07",
+                                "y": 250.102
+                        },
+                        {
+                                "x": "2021-08",
+                                "y": 265.421
+                        },
+                        {
+                                "x": "2021-09",
+                                "y": 272.231
+                        },
+                        {
+                                "x": "2021-10",
+                                "y": 272.928
+                        },
+                        {
+                                "x": "2021-11",
+                                "y": 268.645
+                        },
+                        {
+                                "x": "2021-12",
+                                "y": 259.801
+                        },
+                        {
+                                "x": "2022-01",
+                                "y": 262.01
+                        },
+                        {
+                                "x": "2022-02",
+                                "y": 261.905
+                        },
+                        {
+                                "x": "2022-03",
+                                "y": 263.846
+                        },
+                        {
+                                "x": "2022-04",
+                                "y": 272.806
+                        },
+                        {
+                                "x": "2022-05",
+                                "y": 274.221
+                        },
+                        {
+                                "x": "2022-06",
+                                "y": 279.73
+                        },
+                        {
+                                "x": "2022-07",
+                                "y": 290.752
+                        },
+                        {
+                                "x": "2022-08",
+                                "y": 291.066
+                        },
+                        {
+                                "x": "2022-09",
+                                "y": 289.214
+                        },
+                        {
+                                "x": "2022-10",
+                                "y": 284.226
+                        },
+                        {
+                                "x": "2022-11",
+                                "y": 273.214
+                        },
+                        {
+                                "x": "2022-12",
+                                "y": 260.542
+                        },
+                        {
+                                "x": "2023-01",
+                                "y": 254.458
+                        },
+                        {
+                                "x": "2023-02",
+                                "y": 259.416
+                        },
+                        {
+                                "x": "2023-03",
+                                "y": 255.882
+                        },
+                        {
+                                "x": "2023-04",
+                                "y": 259.285
+                        },
+                        {
+                                "x": "2023-05",
+                                "y": 256.164
+                        },
+                        {
+                                "x": "2023-06",
+                                "y": 247.771
+                        },
+                        {
+                                "x": "2023-07",
+                                "y": 231.511
+                        },
+                        {
+                                "x": "2023-08",
+                                "y": 231.782
+                        },
+                        {
+                                "x": "2023-09",
+                                "y": 234.704
+                        },
+                        {
+                                "x": "2023-10",
+                                "y": 241.451
+                        },
+                        {
+                                "x": "2023-11",
+                                "y": 241.904
+                        },
+                        {
+                                "x": "2023-12",
+                                "y": 237.594
+                        },
+                        {
+                                "x": "2024-01",
+                                "y": 233.298
+                        },
+                        {
+                                "x": "2024-02",
+                                "y": 236.404
+                        },
+                        {
+                                "x": "2024-03",
+                                "y": 245.346
+                        },
+                        {
+                                "x": "2024-04",
+                                "y": 262.028
+                        },
+                        {
+                                "x": "2024-05",
+                                "y": 266.774
+                        },
+                        {
+                                "x": "2024-06",
+                                "y": 270.59
+                        },
+                        {
+                                "x": "2024-07",
+                                "y": 269.024
+                        },
+                        {
+                                "x": "2024-08",
+                                "y": 267.801
+                        },
+                        {
+                                "x": "2024-09",
+                                "y": 269.019
+                        },
+                        {
+                                "x": "2024-10",
+                                "y": 271.422
+                        },
+                        {
+                                "x": "2024-11",
+                                "y": 267.68
+                        },
+                        {
+                                "x": "2024-12",
+                                "y": 263.366
+                        },
+                        {
+                                "x": "2025-01",
+                                "y": 264.331
+                        },
+                        {
+                                "x": "2025-02",
+                                "y": 265.547
+                        },
+                        {
+                                "x": "2025-03",
+                                "y": 286.294
+                        },
+                        {
+                                "x": "2025-04",
+                                "y": 282.417
+                        },
+                        {
+                                "x": "2025-05",
+                                "y": 278.622
+                        }
+                ],
+                "borderColor": "#36A2EB",
+                "backgroundColor": "#36A2EB20",
+                "fill": false,
+                "tension": 0.4
+        },
+        {
+                "label": "\u5851\u6599\u539f\u6599\u548c\u6811\u8102\u5236\u9020",
+                "data": [
+                        {
+                                "x": "2015-01",
+                                "y": 285.4
+                        },
+                        {
+                                "x": "2015-02",
+                                "y": 280.8
+                        },
+                        {
+                                "x": "2015-03",
+                                "y": 274.0
+                        },
+                        {
+                                "x": "2015-04",
+                                "y": 273.2
+                        },
+                        {
+                                "x": "2015-05",
+                                "y": 274.1
+                        },
+                        {
+                                "x": "2015-06",
+                                "y": 275.6
+                        },
+                        {
+                                "x": "2015-07",
+                                "y": 273.8
+                        },
+                        {
+                                "x": "2015-08",
+                                "y": 270.7
+                        },
+                        {
+                                "x": "2015-09",
+                                "y": 264.5
+                        },
+                        {
+                                "x": "2015-10",
+                                "y": 261.4
+                        },
+                        {
+                                "x": "2015-11",
+                                "y": 260.2
+                        },
+                        {
+                                "x": "2015-12",
+                                "y": 261.2
+                        },
+                        {
+                                "x": "2016-01",
+                                "y": 256.7
+                        },
+                        {
+                                "x": "2016-02",
+                                "y": 255.4
+                        },
+                        {
+                                "x": "2016-03",
+                                "y": 254.3
+                        },
+                        {
+                                "x": "2016-04",
+                                "y": 254.0
+                        },
+                        {
+                                "x": "2016-05",
+                                "y": 257.2
+                        },
+                        {
+                                "x": "2016-06",
+                                "y": 260.1
+                        },
+                        {
+                                "x": "2016-07",
+                                "y": 259.9
+                        },
+                        {
+                                "x": "2016-08",
+                                "y": 259.5
+                        },
+                        {
+                                "x": "2016-09",
+                                "y": 260.7
+                        },
+                        {
+                                "x": "2016-10",
+                                "y": 263.3
+                        },
+                        {
+                                "x": "2016-11",
+                                "y": 262.2
+                        },
+                        {
+                                "x": "2016-12",
+                                "y": 258.1
+                        },
+                        {
+                                "x": "2017-01",
+                                "y": 260.1
+                        },
+                        {
+                                "x": "2017-02",
+                                "y": 265.1
+                        },
+                        {
+                                "x": "2017-03",
+                                "y": 269.2
+                        },
+                        {
+                                "x": "2017-04",
+                                "y": 273.8
+                        },
+                        {
+                                "x": "2017-05",
+                                "y": 274.1
+                        },
+                        {
+                                "x": "2017-06",
+                                "y": 272.9
+                        },
+                        {
+                                "x": "2017-07",
+                                "y": 270.3
+                        },
+                        {
+                                "x": "2017-08",
+                                "y": 269.9
+                        },
+                        {
+                                "x": "2017-09",
+                                "y": 272.6
+                        },
+                        {
+                                "x": "2017-10",
+                                "y": 277.2
+                        },
+                        {
+                                "x": "2017-11",
+                                "y": 278.8
+                        },
+                        {
+                                "x": "2017-12",
+                                "y": 280.3
+                        },
+                        {
+                                "x": "2018-01",
+                                "y": 275.1
+                        },
+                        {
+                                "x": "2018-02",
+                                "y": 278.0
+                        },
+                        {
+                                "x": "2018-03",
+                                "y": 282.7
+                        },
+                        {
+                                "x": "2018-04",
+                                "y": 280.7
+                        },
+                        {
+                                "x": "2018-05",
+                                "y": 285.1
+                        },
+                        {
+                                "x": "2018-06",
+                                "y": 288.0
+                        },
+                        {
+                                "x": "2018-07",
+                                "y": 289.0
+                        },
+                        {
+                                "x": "2018-08",
+                                "y": 292.6
+                        },
+                        {
+                                "x": "2018-09",
+                                "y": 290.4
+                        },
+                        {
+                                "x": "2018-10",
+                                "y": 291.4
+                        },
+                        {
+                                "x": "2018-11",
+                                "y": 286.8
+                        },
+                        {
+                                "x": "2018-12",
+                                "y": 282.2
+                        },
+                        {
+                                "x": "2019-01",
+                                "y": 276.5
+                        },
+                        {
+                                "x": "2019-02",
+                                "y": 275.8
+                        },
+                        {
+                                "x": "2019-03",
+                                "y": 273.9
+                        },
+                        {
+                                "x": "2019-04",
+                                "y": 273.9
+                        },
+                        {
+                                "x": "2019-05",
+                                "y": 275.7
+                        },
+                        {
+                                "x": "2019-06",
+                                "y": 273.2
+                        },
+                        {
+                                "x": "2019-07",
+                                "y": 272.7
+                        },
+                        {
+                                "x": "2019-08",
+                                "y": 273.1
+                        },
+                        {
+                                "x": "2019-09",
+                                "y": 273.3
+                        },
+                        {
+                                "x": "2019-10",
+                                "y": 273.8
+                        },
+                        {
+                                "x": "2019-11",
+                                "y": 271.2
+                        },
+                        {
+                                "x": "2019-12",
+                                "y": 266.1
+                        },
+                        {
+                                "x": "2020-01",
+                                "y": 265.7
+                        },
+                        {
+                                "x": "2020-02",
+                                "y": 269.6
+                        },
+                        {
+                                "x": "2020-03",
+                                "y": 268.6
+                        },
+                        {
+                                "x": "2020-04",
+                                "y": 255.8
+                        },
+                        {
+                                "x": "2020-05",
+                                "y": 249.0
+                        },
+                        {
+                                "x": "2020-06",
+                                "y": 251.1
+                        },
+                        {
+                                "x": "2020-07",
+                                "y": 254.5
+                        },
+                        {
+                                "x": "2020-08",
+                                "y": 261.2
+                        },
+                        {
+                                "x": "2020-09",
+                                "y": 262.3
+                        },
+                        {
+                                "x": "2020-10",
+                                "y": 272.2
+                        },
+                        {
+                                "x": "2020-11",
+                                "y": 273.6
+                        },
+                        {
+                                "x": "2020-12",
+                                "y": 279.1
+                        },
+                        {
+                                "x": "2021-01",
+                                "y": 287.5
+                        },
+                        {
+                                "x": "2021-02",
+                                "y": 300.4
+                        },
+                        {
+                                "x": "2021-03",
+                                "y": 326.7
+                        },
+                        {
+                                "x": "2021-04",
+                                "y": 342.8
+                        },
+                        {
+                                "x": "2021-05",
+                                "y": 350.3
+                        },
+                        {
+                                "x": "2021-06",
+                                "y": 362.9
+                        },
+                        {
+                                "x": "2021-07",
+                                "y": 371.402
+                        },
+                        {
+                                "x": "2021-08",
+                                "y": 376.96
+                        },
+                        {
+                                "x": "2021-09",
+                                "y": 377.061
+                        },
+                        {
+                                "x": "2021-10",
+                                "y": 379.449
+                        },
+                        {
+                                "x": "2021-11",
+                                "y": 375.398
+                        },
+                        {
+                                "x": "2021-12",
+                                "y": 367.883
+                        },
+                        {
+                                "x": "2022-01",
+                                "y": 357.296
+                        },
+                        {
+                                "x": "2022-02",
+                                "y": 357.647
+                        },
+                        {
+                                "x": "2022-03",
+                                "y": 357.628
+                        },
+                        {
+                                "x": "2022-04",
+                                "y": 370.66
+                        },
+                        {
+                                "x": "2022-05",
+                                "y": 377.211
+                        },
+                        {
+                                "x": "2022-06",
+                                "y": 380.764
+                        },
+                        {
+                                "x": "2022-07",
+                                "y": 373.717
+                        },
+                        {
+                                "x": "2022-08",
+                                "y": 362.99
+                        },
+                        {
+                                "x": "2022-09",
+                                "y": 361.292
+                        },
+                        {
+                                "x": "2022-10",
+                                "y": 353.335
+                        },
+                        {
+                                "x": "2022-11",
+                                "y": 337.078
+                        },
+                        {
+                                "x": "2022-12",
+                                "y": 333.108
+                        },
+                        {
+                                "x": "2023-01",
+                                "y": 327.564
+                        },
+                        {
+                                "x": "2023-02",
+                                "y": 334.96
+                        },
+                        {
+                                "x": "2023-03",
+                                "y": 338.133
+                        },
+                        {
+                                "x": "2023-04",
+                                "y": 344.749
+                        },
+                        {
+                                "x": "2023-05",
+                                "y": 340.782
+                        },
+                        {
+                                "x": "2023-06",
+                                "y": 334.366
+                        },
+                        {
+                                "x": "2023-07",
+                                "y": 322.48
+                        },
+                        {
+                                "x": "2023-08",
+                                "y": 318.412
+                        },
+                        {
+                                "x": "2023-09",
+                                "y": 317.718
+                        },
+                        {
+                                "x": "2023-10",
+                                "y": 318.102
+                        },
+                        {
+                                "x": "2023-11",
+                                "y": 318.798
+                        },
+                        {
+                                "x": "2023-12",
+                                "y": 317.748
+                        },
+                        {
+                                "x": "2024-01",
+                                "y": 314.049
+                        },
+                        {
+                                "x": "2024-02",
+                                "y": 320.519
+                        },
+                        {
+                                "x": "2024-03",
+                                "y": 317.074
+                        },
+                        {
+                                "x": "2024-04",
+                                "y": 320.7
+                        },
+                        {
+                                "x": "2024-05",
+                                "y": 321.393
+                        },
+                        {
+                                "x": "2024-06",
+                                "y": 321.248
+                        },
+                        {
+                                "x": "2024-07",
+                                "y": 324.553
+                        },
+                        {
+                                "x": "2024-08",
+                                "y": 325.268
+                        },
+                        {
+                                "x": "2024-09",
+                                "y": 315.105
+                        },
+                        {
+                                "x": "2024-10",
+                                "y": 320.429
+                        },
+                        {
+                                "x": "2024-11",
+                                "y": 317.001
+                        },
+                        {
+                                "x": "2024-12",
+                                "y": 315.192
+                        },
+                        {
+                                "x": "2025-01",
+                                "y": 315.011
+                        },
+                        {
+                                "x": "2025-02",
+                                "y": 321.45
+                        },
+                        {
+                                "x": "2025-03",
+                                "y": 327.577
+                        },
+                        {
+                                "x": "2025-04",
+                                "y": 327.499
+                        },
+                        {
+                                "x": "2025-05",
+                                "y": 324.582
+                        }
+                ],
+                "borderColor": "#FFCE56",
+                "backgroundColor": "#FFCE5620",
+                "fill": false,
+                "tension": 0.4
+        },
+        {
+                "label": "\u5176\u4ed6\u5236\u9020\u91d1\u5c5e\u4e1d\u4ea7\u54c1",
+                "data": [
+                        {
+                                "x": "2015-01",
+                                "y": 226.8
+                        },
+                        {
+                                "x": "2015-02",
+                                "y": 226.7
+                        },
+                        {
+                                "x": "2015-03",
+                                "y": 226.5
+                        },
+                        {
+                                "x": "2015-04",
+                                "y": 226.6
+                        },
+                        {
+                                "x": "2015-05",
+                                "y": 226.6
+                        },
+                        {
+                                "x": "2015-06",
+                                "y": 227.1
+                        },
+                        {
+                                "x": "2015-07",
+                                "y": 226.8
+                        },
+                        {
+                                "x": "2015-08",
+                                "y": 226.8
+                        },
+                        {
+                                "x": "2015-09",
+                                "y": 226.7
+                        },
+                        {
+                                "x": "2015-10",
+                                "y": 226.9
+                        },
+                        {
+                                "x": "2015-11",
+                                "y": 226.4
+                        },
+                        {
+                                "x": "2015-12",
+                                "y": 226.4
+                        },
+                        {
+                                "x": "2016-01",
+                                "y": 225.5
+                        },
+                        {
+                                "x": "2016-02",
+                                "y": 224.7
+                        },
+                        {
+                                "x": "2016-03",
+                                "y": 224.7
+                        },
+                        {
+                                "x": "2016-04",
+                                "y": 224.5
+                        },
+                        {
+                                "x": "2016-05",
+                                "y": 224.4
+                        },
+                        {
+                                "x": "2016-06",
+                                "y": 224.1
+                        },
+                        {
+                                "x": "2016-07",
+                                "y": 223.8
+                        },
+                        {
+                                "x": "2016-08",
+                                "y": 223.6
+                        },
+                        {
+                                "x": "2016-09",
+                                "y": 223.6
+                        },
+                        {
+                                "x": "2016-10",
+                                "y": 223.6
+                        },
+                        {
+                                "x": "2016-11",
+                                "y": 223.5
+                        },
+                        {
+                                "x": "2016-12",
+                                "y": 223.3
+                        },
+                        {
+                                "x": "2017-01",
+                                "y": 223.5
+                        },
+                        {
+                                "x": "2017-02",
+                                "y": 224.2
+                        },
+                        {
+                                "x": "2017-03",
+                                "y": 223.8
+                        },
+                        {
+                                "x": "2017-04",
+                                "y": 224.2
+                        },
+                        {
+                                "x": "2017-05",
+                                "y": 224.5
+                        },
+                        {
+                                "x": "2017-06",
+                                "y": 225.2
+                        },
+                        {
+                                "x": "2017-07",
+                                "y": 224.9
+                        },
+                        {
+                                "x": "2017-08",
+                                "y": 224.4
+                        },
+                        {
+                                "x": "2017-09",
+                                "y": 224.8
+                        },
+                        {
+                                "x": "2017-10",
+                                "y": 225.3
+                        },
+                        {
+                                "x": "2017-11",
+                                "y": 226.2
+                        },
+                        {
+                                "x": "2017-12",
+                                "y": 225.9
+                        },
+                        {
+                                "x": "2018-01",
+                                "y": 227.5
+                        },
+                        {
+                                "x": "2018-02",
+                                "y": 227.1
+                        },
+                        {
+                                "x": "2018-03",
+                                "y": 226.6
+                        },
+                        {
+                                "x": "2018-04",
+                                "y": 227.9
+                        },
+                        {
+                                "x": "2018-05",
+                                "y": 231.0
+                        },
+                        {
+                                "x": "2018-06",
+                                "y": 231.8
+                        },
+                        {
+                                "x": "2018-07",
+                                "y": 236.4
+                        },
+                        {
+                                "x": "2018-08",
+                                "y": 241.1
+                        },
+                        {
+                                "x": "2018-09",
+                                "y": 241.4
+                        },
+                        {
+                                "x": "2018-10",
+                                "y": 241.1
+                        },
+                        {
+                                "x": "2018-11",
+                                "y": 241.7
+                        },
+                        {
+                                "x": "2018-12",
+                                "y": 243.4
+                        },
+                        {
+                                "x": "2019-01",
+                                "y": 244.0
+                        },
+                        {
+                                "x": "2019-02",
+                                "y": 246.6
+                        },
+                        {
+                                "x": "2019-03",
+                                "y": 247.2
+                        },
+                        {
+                                "x": "2019-04",
+                                "y": 247.6
+                        },
+                        {
+                                "x": "2019-05",
+                                "y": 247.9
+                        },
+                        {
+                                "x": "2019-06",
+                                "y": 248.0
+                        },
+                        {
+                                "x": "2019-07",
+                                "y": 247.7
+                        },
+                        {
+                                "x": "2019-08",
+                                "y": 248.0
+                        },
+                        {
+                                "x": "2019-09",
+                                "y": 248.2
+                        },
+                        {
+                                "x": "2019-10",
+                                "y": 248.5
+                        },
+                        {
+                                "x": "2019-11",
+                                "y": 248.9
+                        },
+                        {
+                                "x": "2019-12",
+                                "y": 248.4
+                        },
+                        {
+                                "x": "2020-01",
+                                "y": 250.7
+                        },
+                        {
+                                "x": "2020-02",
+                                "y": 250.4
+                        },
+                        {
+                                "x": "2020-03",
+                                "y": 250.5
+                        },
+                        {
+                                "x": "2020-04",
+                                "y": 251.5
+                        },
+                        {
+                                "x": "2020-05",
+                                "y": 252.1
+                        },
+                        {
+                                "x": "2020-06",
+                                "y": 252.1
+                        },
+                        {
+                                "x": "2020-07",
+                                "y": 252.1
+                        },
+                        {
+                                "x": "2020-08",
+                                "y": 252.4
+                        },
+                        {
+                                "x": "2020-09",
+                                "y": 252.5
+                        },
+                        {
+                                "x": "2020-10",
+                                "y": 251.9
+                        },
+                        {
+                                "x": "2020-11",
+                                "y": 251.5
+                        },
+                        {
+                                "x": "2020-12",
+                                "y": 253.0
+                        },
+                        {
+                                "x": "2021-01",
+                                "y": 254.6
+                        },
+                        {
+                                "x": "2021-02",
+                                "y": 256.5
+                        },
+                        {
+                                "x": "2021-03",
+                                "y": 262.7
+                        },
+                        {
+                                "x": "2021-04",
+                                "y": 264.7
+                        },
+                        {
+                                "x": "2021-05",
+                                "y": 270.1
+                        },
+                        {
+                                "x": "2021-06",
+                                "y": 273.4
+                        },
+                        {
+                                "x": "2021-07",
+                                "y": 281.984
+                        },
+                        {
+                                "x": "2021-08",
+                                "y": 289.739
+                        },
+                        {
+                                "x": "2021-09",
+                                "y": 295.911
+                        },
+                        {
+                                "x": "2021-10",
+                                "y": 296.582
+                        },
+                        {
+                                "x": "2021-11",
+                                "y": 299.803
+                        },
+                        {
+                                "x": "2021-12",
+                                "y": 301.488
+                        },
+                        {
+                                "x": "2022-01",
+                                "y": 303.399
+                        },
+                        {
+                                "x": "2022-02",
+                                "y": 309.72
+                        },
+                        {
+                                "x": "2022-03",
+                                "y": 315.897
+                        },
+                        {
+                                "x": "2022-04",
+                                "y": 322.652
+                        },
+                        {
+                                "x": "2022-05",
+                                "y": 324.536
+                        },
+                        {
+                                "x": "2022-06",
+                                "y": 325.576
+                        },
+                        {
+                                "x": "2022-07",
+                                "y": 341.558
+                        },
+                        {
+                                "x": "2022-08",
+                                "y": 343.165
+                        },
+                        {
+                                "x": "2022-09",
+                                "y": 342.904
+                        },
+                        {
+                                "x": "2022-10",
+                                "y": 354.545
+                        },
+                        {
+                                "x": "2022-11",
+                                "y": 352.46
+                        },
+                        {
+                                "x": "2022-12",
+                                "y": 352.695
+                        },
+                        {
+                                "x": "2023-01",
+                                "y": 337.899
+                        },
+                        {
+                                "x": "2023-02",
+                                "y": 334.758
+                        },
+                        {
+                                "x": "2023-03",
+                                "y": 335.55
+                        },
+                        {
+                                "x": "2023-04",
+                                "y": 334.788
+                        },
+                        {
+                                "x": "2023-05",
+                                "y": 335.11
+                        },
+                        {
+                                "x": "2023-06",
+                                "y": 335.642
+                        },
+                        {
+                                "x": "2023-07",
+                                "y": 333.052
+                        },
+                        {
+                                "x": "2023-08",
+                                "y": 333.049
+                        },
+                        {
+                                "x": "2023-09",
+                                "y": 334.054
+                        },
+                        {
+                                "x": "2023-10",
+                                "y": 332.562
+                        },
+                        {
+                                "x": "2023-11",
+                                "y": 332.951
+                        },
+                        {
+                                "x": "2023-12",
+                                "y": 329.781
+                        },
+                        {
+                                "x": "2024-01",
+                                "y": 329.806
+                        },
+                        {
+                                "x": "2024-02",
+                                "y": 338.172
+                        },
+                        {
+                                "x": "2024-03",
+                                "y": 337.12
+                        },
+                        {
+                                "x": "2024-04",
+                                "y": 336.413
+                        },
+                        {
+                                "x": "2024-05",
+                                "y": 336.487
+                        },
+                        {
+                                "x": "2024-06",
+                                "y": 350.784
+                        },
+                        {
+                                "x": "2024-07",
+                                "y": 350.66
+                        },
+                        {
+                                "x": "2024-08",
+                                "y": 349.637
+                        },
+                        {
+                                "x": "2024-09",
+                                "y": 349.598
+                        },
+                        {
+                                "x": "2024-10",
+                                "y": 349.558
+                        },
+                        {
+                                "x": "2024-11",
+                                "y": 350.084
+                        },
+                        {
+                                "x": "2024-12",
+                                "y": 349.962
+                        },
+                        {
+                                "x": "2025-01",
+                                "y": 351.374
+                        },
+                        {
+                                "x": "2025-02",
+                                "y": 353.337
+                        },
+                        {
+                                "x": "2025-03",
+                                "y": 353.414
+                        },
+                        {
+                                "x": "2025-04",
+                                "y": 357.621
+                        },
+                        {
+                                "x": "2025-05",
+                                "y": 360.979
+                        }
+                ],
+                "borderColor": "#4BC0C0",
+                "backgroundColor": "#4BC0C020",
+                "fill": false,
+                "tension": 0.4
+        },
+        {
+                "label": "\u70ad\u9ed1\u5236\u9020",
+                "data": [
+                        {
+                                "x": "2015-01",
+                                "y": 299.6
+                        },
+                        {
+                                "x": "2015-02",
+                                "y": 269.4
+                        },
+                        {
+                                "x": "2015-03",
+                                "y": 282.3
+                        },
+                        {
+                                "x": "2015-04",
+                                "y": 279.3
+                        },
+                        {
+                                "x": "2015-05",
+                                "y": 282.3
+                        },
+                        {
+                                "x": "2015-06",
+                                "y": 290.6
+                        },
+                        {
+                                "x": "2015-07",
+                                "y": 290.2
+                        },
+                        {
+                                "x": "2015-08",
+                                "y": 283.3
+                        },
+                        {
+                                "x": "2015-09",
+                                "y": 286.8
+                        },
+                        {
+                                "x": "2015-10",
+                                "y": 285.8
+                        },
+                        {
+                                "x": "2015-11",
+                                "y": 286.1
+                        },
+                        {
+                                "x": "2015-12",
+                                "y": 282.3
+                        },
+                        {
+                                "x": "2016-01",
+                                "y": 270.9
+                        },
+                        {
+                                "x": "2016-02",
+                                "y": 265.7
+                        },
+                        {
+                                "x": "2016-03",
+                                "y": 267.4
+                        },
+                        {
+                                "x": "2016-04",
+                                "y": 271.7
+                        },
+                        {
+                                "x": "2016-05",
+                                "y": 274.2
+                        },
+                        {
+                                "x": "2016-06",
+                                "y": 281.9
+                        },
+                        {
+                                "x": "2016-07",
+                                "y": 286.1
+                        },
+                        {
+                                "x": "2016-10",
+                                "y": 288.3
+                        },
+                        {
+                                "x": "2016-11",
+                                "y": 288.4
+                        },
+                        {
+                                "x": "2016-12",
+                                "y": 298.7
+                        },
+                        {
+                                "x": "2017-01",
+                                "y": 300.5
+                        },
+                        {
+                                "x": "2017-02",
+                                "y": 304.6
+                        },
+                        {
+                                "x": "2017-03",
+                                "y": 311.6
+                        },
+                        {
+                                "x": "2017-04",
+                                "y": 311.4
+                        },
+                        {
+                                "x": "2017-05",
+                                "y": 305.7
+                        },
+                        {
+                                "x": "2017-06",
+                                "y": 303.6
+                        },
+                        {
+                                "x": "2017-07",
+                                "y": 301.2
+                        },
+                        {
+                                "x": "2017-08",
+                                "y": 306.6
+                        },
+                        {
+                                "x": "2017-09",
+                                "y": 305.5
+                        },
+                        {
+                                "x": "2017-10",
+                                "y": 313.9
+                        },
+                        {
+                                "x": "2017-11",
+                                "y": 314.6
+                        },
+                        {
+                                "x": "2017-12",
+                                "y": 319.4
+                        },
+                        {
+                                "x": "2018-01",
+                                "y": 333.4
+                        },
+                        {
+                                "x": "2018-02",
+                                "y": 345.0
+                        },
+                        {
+                                "x": "2018-03",
+                                "y": 344.5
+                        },
+                        {
+                                "x": "2018-04",
+                                "y": 346.8
+                        },
+                        {
+                                "x": "2018-05",
+                                "y": 344.2
+                        },
+                        {
+                                "x": "2018-06",
+                                "y": 354.7
+                        },
+                        {
+                                "x": "2018-07",
+                                "y": 368.6
+                        },
+                        {
+                                "x": "2018-08",
+                                "y": 377.5
+                        },
+                        {
+                                "x": "2018-09",
+                                "y": 376.8
+                        },
+                        {
+                                "x": "2018-10",
+                                "y": 381.4
+                        },
+                        {
+                                "x": "2018-11",
+                                "y": 377.7
+                        },
+                        {
+                                "x": "2018-12",
+                                "y": 380.2
+                        },
+                        {
+                                "x": "2019-01",
+                                "y": 382.1
+                        },
+                        {
+                                "x": "2019-02",
+                                "y": 385.3
+                        },
+                        {
+                                "x": "2019-03",
+                                "y": 379.7
+                        },
+                        {
+                                "x": "2019-04",
+                                "y": 387.3
+                        },
+                        {
+                                "x": "2019-05",
+                                "y": 396.9
+                        },
+                        {
+                                "x": "2019-06",
+                                "y": 396.2
+                        },
+                        {
+                                "x": "2019-07",
+                                "y": 395.0
+                        },
+                        {
+                                "x": "2019-08",
+                                "y": 392.0
+                        },
+                        {
+                                "x": "2019-09",
+                                "y": 381.2
+                        },
+                        {
+                                "x": "2019-10",
+                                "y": 375.8
+                        },
+                        {
+                                "x": "2019-11",
+                                "y": 363.4
+                        },
+                        {
+                                "x": "2019-12",
+                                "y": 368.3
+                        },
+                        {
+                                "x": "2020-01",
+                                "y": 358.6
+                        },
+                        {
+                                "x": "2020-02",
+                                "y": 366.3
+                        },
+                        {
+                                "x": "2020-03",
+                                "y": 375.2
+                        },
+                        {
+                                "x": "2020-04",
+                                "y": 364.2
+                        },
+                        {
+                                "x": "2020-05",
+                                "y": 355.0
+                        },
+                        {
+                                "x": "2020-06",
+                                "y": 346.3
+                        },
+                        {
+                                "x": "2020-07",
+                                "y": 346.6
+                        },
+                        {
+                                "x": "2020-08",
+                                "y": 347.3
+                        },
+                        {
+                                "x": "2020-09",
+                                "y": 355.0
+                        },
+                        {
+                                "x": "2020-10",
+                                "y": 356.8
+                        },
+                        {
+                                "x": "2020-11",
+                                "y": 364.9
+                        },
+                        {
+                                "x": "2020-12",
+                                "y": 366.1
+                        },
+                        {
+                                "x": "2021-01",
+                                "y": 370.2
+                        },
+                        {
+                                "x": "2021-02",
+                                "y": 379.8
+                        },
+                        {
+                                "x": "2021-03",
+                                "y": 392.7
+                        },
+                        {
+                                "x": "2021-04",
+                                "y": 399.9
+                        },
+                        {
+                                "x": "2021-05",
+                                "y": 417.9
+                        },
+                        {
+                                "x": "2021-06",
+                                "y": 440.9
+                        },
+                        {
+                                "x": "2021-07",
+                                "y": 447.089
+                        },
+                        {
+                                "x": "2021-08",
+                                "y": 455.444
+                        },
+                        {
+                                "x": "2021-09",
+                                "y": 466.885
+                        },
+                        {
+                                "x": "2021-10",
+                                "y": 476.385
+                        },
+                        {
+                                "x": "2021-11",
+                                "y": 493.991
+                        },
+                        {
+                                "x": "2021-12",
+                                "y": 554.383
+                        },
+                        {
+                                "x": "2022-01",
+                                "y": 545.341
+                        },
+                        {
+                                "x": "2022-02",
+                                "y": 619.201
+                        },
+                        {
+                                "x": "2022-03",
+                                "y": 632.158
+                        },
+                        {
+                                "x": "2022-04",
+                                "y": 666.451
+                        },
+                        {
+                                "x": "2022-05",
+                                "y": 665.605
+                        },
+                        {
+                                "x": "2022-06",
+                                "y": 685.644
+                        },
+                        {
+                                "x": "2022-07",
+                                "y": 699.025
+                        },
+                        {
+                                "x": "2022-08",
+                                "y": 690.509
+                        },
+                        {
+                                "x": "2022-09",
+                                "y": 689.475
+                        },
+                        {
+                                "x": "2022-10",
+                                "y": 647.911
+                        },
+                        {
+                                "x": "2022-11",
+                                "y": 633.839
+                        },
+                        {
+                                "x": "2022-12",
+                                "y": 624.283
+                        },
+                        {
+                                "x": "2023-01",
+                                "y": 602.029
+                        },
+                        {
+                                "x": "2023-02",
+                                "y": 627.536
+                        },
+                        {
+                                "x": "2023-03",
+                                "y": 607.658
+                        },
+                        {
+                                "x": "2023-04",
+                                "y": 601.382
+                        },
+                        {
+                                "x": "2023-05",
+                                "y": 614.132
+                        },
+                        {
+                                "x": "2023-06",
+                                "y": 600.099
+                        },
+                        {
+                                "x": "2023-07",
+                                "y": 613.906
+                        },
+                        {
+                                "x": "2023-08",
+                                "y": 619.609
+                        },
+                        {
+                                "x": "2023-09",
+                                "y": 640.253
+                        },
+                        {
+                                "x": "2023-10",
+                                "y": 654.879
+                        },
+                        {
+                                "x": "2023-11",
+                                "y": 651.125
+                        },
+                        {
+                                "x": "2023-12",
+                                "y": 633.002
+                        },
+                        {
+                                "x": "2024-01",
+                                "y": 646.687
+                        },
+                        {
+                                "x": "2024-02",
+                                "y": 626.07
+                        },
+                        {
+                                "x": "2024-03",
+                                "y": 621.784
+                        },
+                        {
+                                "x": "2024-04",
+                                "y": 606.95
+                        },
+                        {
+                                "x": "2024-05",
+                                "y": 611.139
+                        },
+                        {
+                                "x": "2024-06",
+                                "y": 619.234
+                        },
+                        {
+                                "x": "2024-07",
+                                "y": 622.293
+                        },
+                        {
+                                "x": "2024-08",
+                                "y": 621.351
+                        },
+                        {
+                                "x": "2024-09",
+                                "y": 629.031
+                        },
+                        {
+                                "x": "2024-10",
+                                "y": 630.023
+                        },
+                        {
+                                "x": "2024-11",
+                                "y": 615.906
+                        },
+                        {
+                                "x": "2024-12",
+                                "y": 629.814
+                        },
+                        {
+                                "x": "2025-01",
+                                "y": 588.625
+                        },
+                        {
+                                "x": "2025-02",
+                                "y": 591.307
+                        },
+                        {
+                                "x": "2025-03",
+                                "y": 599.75
+                        },
+                        {
+                                "x": "2025-04",
+                                "y": 596.465
+                        },
+                        {
+                                "x": "2025-05",
+                                "y": 588.975
+                        }
+                ],
+                "borderColor": "#9966FF",
+                "backgroundColor": "#9966FF20",
+                "fill": false,
+                "tension": 0.4
+        }
+];
+        
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                datasets: chartDatasets
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                parsing: {
+                    xAxisKey: 'x',
+                    yAxisKey: 'y'
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            usePointStyle: true,
+                            padding: 20,
+                            font: {
+                                size: 12
+                            }
+                        }
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false,
+                        backgroundColor: 'rgba(0,0,0,0.8)',
+                        titleColor: '#fff',
+                        bodyColor: '#fff',
+                        borderColor: '#FF6B6B',
+                        borderWidth: 1,
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + context.parsed.y.toFixed(2);
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        type: 'category',
+                        grid: {
+                            color: 'rgba(0,0,0,0.1)'
+                        },
+                        ticks: {
+                            maxTicksLimit: 20
+                        }
+                    },
+                    y: {
+                        grid: {
+                            color: 'rgba(0,0,0,0.1)'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return value.toFixed(1);
+                            }
+                        }
+                    }
+                },
+                interaction: {
+                    mode: 'nearest',
+                    axis: 'x',
+                    intersect: false
+                }
+            }
+        });
+    </script>
+</body>
+</html>

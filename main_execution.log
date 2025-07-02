@@ -1,0 +1,1233 @@
+2025-07-02 10:07:43,848 - INFO - ================================================================================
+2025-07-02 10:07:43,848 - INFO - 🚀 数据整合程序启动 / Data Integration Program Started
+2025-07-02 10:07:43,848 - INFO - ================================================================================
+2025-07-02 10:07:43,848 - INFO - 
+📊 [1/4] 执行模块 / Executing module: Commodity Price Crawler (商品价格爬虫)
+2025-07-02 10:07:43,848 - INFO - 📁 脚本路径 / Script path: func1/commodity_price_crawler.py
+2025-07-02 10:07:43,848 - INFO - 开始执行脚本 / Starting script: func1/commodity_price_crawler.py
+2025-07-02 10:07:43,848 - INFO - 切换到目录 / Changed to directory: func1
+2025-07-02 10:07:44,386 - INFO - 脚本执行成功 / Script executed successfully: func1/commodity_price_crawler.py
+2025-07-02 10:07:44,386 - INFO - 输出 / Output:
+🚀 商品数据爬虫启动 / Commodity Data Crawler Started
+============================================================
+ℹ️  文件已存在，跳过下载 / File already exists, skipping download: CMO-Historical-Data-Monthly.xlsx
+📂 打开Excel文件 / Opening Excel file: CMO-Historical-Data-Monthly.xlsx
+✅ 工作表加载成功 / Worksheet loaded successfully: Monthly Prices
+🔍 查找目标列 / Looking for target column: Rubber, TSR20 **
+✅ 找到目标列 / Found target column: BD - Rubber, TSR20 **
+📊 开始提取数据 / Starting data extraction...
+📈 提取数据 / Extracted data: 1999M01: 0.5979 $/kg
+📈 提取数据 / Extracted data: 1999M02: 0.5587 $/kg
+📈 提取数据 / Extracted data: 1999M03: 0.5224 $/kg
+📈 提取数据 / Extracted data: 1999M04: 0.5236 $/kg
+📈 提取数据 / Extracted data: 1999M05: 0.5505 $/kg
+📈 提取数据 / Extracted data: 1999M06: 0.5540 $/kg
+📈 提取数据 / Extracted data: 1999M07: 0.5109 $/kg
+📈 提取数据 / Extracted data: 1999M08: 0.5392 $/kg
+📈 提取数据 / Extracted data: 1999M09: 0.5967 $/kg
+📈 提取数据 / Extracted data: 1999M10: 0.6793 $/kg
+📈 提取数据 / Extracted data: 1999M11: 0.7639 $/kg
+📈 提取数据 / Extracted data: 1999M12: 0.6958 $/kg
+📈 提取数据 / Extracted data: 2000M01: 0.7069 $/kg
+📈 提取数据 / Extracted data: 2000M02: 0.7304 $/kg
+📈 提取数据 / Extracted data: 2000M03: 0.6555 $/kg
+📈 提取数据 / Extracted data: 2000M04: 0.6441 $/kg
+📈 提取数据 / Extracted data: 2000M05: 0.6171 $/kg
+📈 提取数据 / Extracted data: 2000M06: 0.5957 $/kg
+📈 提取数据 / Extracted data: 2000M07: 0.5790 $/kg
+📈 提取数据 / Extracted data: 2000M08: 0.6073 $/kg
+📈 提取数据 / Extracted data: 2000M09: 0.6049 $/kg
+📈 提取数据 / Extracted data: 2000M10: 0.6056 $/kg
+📈 提取数据 / Extracted data: 2000M11: 0.6015 $/kg
+📈 提取数据 / Extracted data: 2000M12: 0.6026 $/kg
+📈 提取数据 / Extracted data: 2001M01: 0.5986 $/kg
+📈 提取数据 / Extracted data: 2001M02: 0.5711 $/kg
+📈 提取数据 / Extracted data: 2001M03: 0.5182 $/kg
+📈 提取数据 / Extracted data: 2001M04: 0.5120 $/kg
+📈 提取数据 / Extracted data: 2001M05: 0.5140 $/kg
+📈 提取数据 / Extracted data: 2001M06: 0.5140 $/kg
+📈 提取数据 / Extracted data: 2001M07: 0.5040 $/kg
+📈 提取数据 / Extracted data: 2001M08: 0.5293 $/kg
+📈 提取数据 / Extracted data: 2001M09: 0.4935 $/kg
+📈 提取数据 / Extracted data: 2001M10: 0.4821 $/kg
+📈 提取数据 / Extracted data: 2001M11: 0.4670 $/kg
+📈 提取数据 / Extracted data: 2001M12: 0.4794 $/kg
+📈 提取数据 / Extracted data: 2002M01: 0.5388 $/kg
+📈 提取数据 / Extracted data: 2002M02: 0.5831 $/kg
+📈 提取数据 / Extracted data: 2002M03: 0.6814 $/kg
+📈 提取数据 / Extracted data: 2002M04: 0.6422 $/kg
+📈 提取数据 / Extracted data: 2002M05: 0.6814 $/kg
+📈 提取数据 / Extracted data: 2002M06: 0.8314 $/kg
+📈 提取数据 / Extracted data: 2002M07: 0.8128 $/kg
+📈 提取数据 / Extracted data: 2002M08: 0.8306 $/kg
+📈 提取数据 / Extracted data: 2002M09: 0.8955 $/kg
+📈 提取数据 / Extracted data: 2002M10: 0.8313 $/kg
+📈 提取数据 / Extracted data: 2002M11: 0.8403 $/kg
+📈 提取数据 / Extracted data: 2002M12: 0.8496 $/kg
+📈 提取数据 / Extracted data: 2003M01: 0.9031 $/kg
+📈 提取数据 / Extracted data: 2003M02: 0.9400 $/kg
+📈 提取数据 / Extracted data: 2003M03: 0.9458 $/kg
+📈 提取数据 / Extracted data: 2003M04: 0.8780 $/kg
+📈 提取数据 / Extracted data: 2003M05: 0.8370 $/kg
+📈 提取数据 / Extracted data: 2003M06: 0.8443 $/kg
+📈 提取数据 / Extracted data: 2003M07: 0.8752 $/kg
+📈 提取数据 / Extracted data: 2003M08: 0.9477 $/kg
+📈 提取数据 / Extracted data: 2003M09: 1.0869 $/kg
+📈 提取数据 / Extracted data: 2003M10: 1.2938 $/kg
+📈 提取数据 / Extracted data: 2003M11: 1.2621 $/kg
+📈 提取数据 / Extracted data: 2003M12: 1.2350 $/kg
+📈 提取数据 / Extracted data: 2004M01: 1.2100 $/kg
+📈 提取数据 / Extracted data: 2004M02: 1.2462 $/kg
+📈 提取数据 / Extracted data: 2004M03: 1.2705 $/kg
+📈 提取数据 / Extracted data: 2004M04: 1.2718 $/kg
+📈 提取数据 / Extracted data: 2004M05: 1.2390 $/kg
+📈 提取数据 / Extracted data: 2004M06: 1.1960 $/kg
+📈 提取数据 / Extracted data: 2004M07: 1.1458 $/kg
+📈 提取数据 / Extracted data: 2004M08: 1.1388 $/kg
+📈 提取数据 / Extracted data: 2004M09: 1.1450 $/kg
+📈 提取数据 / Extracted data: 2004M10: 1.2129 $/kg
+📈 提取数据 / Extracted data: 2004M11: 1.2163 $/kg
+📈 提取数据 / Extracted data: 2004M12: 1.1869 $/kg
+📈 提取数据 / Extracted data: 2005M01: 1.1875 $/kg
+📈 提取数据 / Extracted data: 2005M02: 1.2163 $/kg
+📈 提取数据 / Extracted data: 2005M03: 1.2226 $/kg
+📈 提取数据 / Extracted data: 2005M04: 1.2095 $/kg
+📈 提取数据 / Extracted data: 2005M05: 1.2061 $/kg
+📈 提取数据 / Extracted data: 2005M06: 1.2669 $/kg
+📈 提取数据 / Extracted data: 2005M07: 1.4524 $/kg
+📈 提取数据 / Extracted data: 2005M08: 1.4393 $/kg
+📈 提取数据 / Extracted data: 2005M09: 1.5940 $/kg
+📈 提取数据 / Extracted data: 2005M10: 1.6296 $/kg
+📈 提取数据 / Extracted data: 2005M11: 1.5808 $/kg
+📈 提取数据 / Extracted data: 2005M12: 1.6313 $/kg
+📈 提取数据 / Extracted data: 2006M01: 1.7615 $/kg
+📈 提取数据 / Extracted data: 2006M02: 1.9259 $/kg
+📈 提取数据 / Extracted data: 2006M03: 1.9127 $/kg
+📈 提取数据 / Extracted data: 2006M04: 1.9409 $/kg
+📈 提取数据 / Extracted data: 2006M05: 2.1543 $/kg
+📈 提取数据 / Extracted data: 2006M06: 2.3492 $/kg
+📈 提取数据 / Extracted data: 2006M07: 2.3081 $/kg
+📈 提取数据 / Extracted data: 2006M08: 2.1357 $/kg
+📈 提取数据 / Extracted data: 2006M09: 1.8115 $/kg
+📈 提取数据 / Extracted data: 2006M10: 1.7926 $/kg
+📈 提取数据 / Extracted data: 2006M11: 1.6150 $/kg
+📈 提取数据 / Extracted data: 2006M12: 1.6454 $/kg
+📈 提取数据 / Extracted data: 2007M01: 1.9395 $/kg
+📈 提取数据 / Extracted data: 2007M02: 2.1174 $/kg
+📈 提取数据 / Extracted data: 2007M03: 2.0525 $/kg
+📈 提取数据 / Extracted data: 2007M04: 2.1650 $/kg
+📈 提取数据 / Extracted data: 2007M05: 2.2192 $/kg
+📈 提取数据 / Extracted data: 2007M06: 2.1098 $/kg
+📈 提取数据 / Extracted data: 2007M07: 2.0401 $/kg
+📈 提取数据 / Extracted data: 2007M08: 2.0685 $/kg
+📈 提取数据 / Extracted data: 2007M09: 2.1111 $/kg
+📈 提取数据 / Extracted data: 2007M10: 2.2628 $/kg
+📈 提取数据 / Extracted data: 2007M11: 2.3732 $/kg
+📈 提取数据 / Extracted data: 2007M12: 2.4088 $/kg
+📈 提取数据 / Extracted data: 2008M01: 2.5345 $/kg
+📈 提取数据 / Extracted data: 2008M02: 2.7213 $/kg
+📈 提取数据 / Extracted data: 2008M03: 2.6961 $/kg
+📈 提取数据 / Extracted data: 2008M04: 2.7039 $/kg
+📈 提取数据 / Extracted data: 2008M05: 2.9603 $/kg
+📈 提取数据 / Extracted data: 2008M06: 3.1710 $/kg
+📈 提取数据 / Extracted data: 2008M07: 3.1960 $/kg
+📈 提取数据 / Extracted data: 2008M08: 2.9138 $/kg
+📈 提取数据 / Extracted data: 2008M09: 2.8073 $/kg
+📈 提取数据 / Extracted data: 2008M10: 1.8623 $/kg
+📈 提取数据 / Extracted data: 2008M11: 1.6161 $/kg
+📈 提取数据 / Extracted data: 2008M12: 1.1773 $/kg
+📈 提取数据 / Extracted data: 2009M01: 1.4079 $/kg
+📈 提取数据 / Extracted data: 2009M02: 1.2977 $/kg
+📈 提取数据 / Extracted data: 2009M03: 1.2775 $/kg
+📈 提取数据 / Extracted data: 2009M04: 1.4830 $/kg
+📈 提取数据 / Extracted data: 2009M05: 1.5616 $/kg
+📈 提取数据 / Extracted data: 2009M06: 1.5268 $/kg
+📈 提取数据 / Extracted data: 2009M07: 1.5955 $/kg
+📈 提取数据 / Extracted data: 2009M08: 1.8389 $/kg
+📈 提取数据 / Extracted data: 2009M09: 2.0666 $/kg
+📈 提取数据 / Extracted data: 2009M10: 2.2637 $/kg
+📈 提取数据 / Extracted data: 2009M11: 2.4888 $/kg
+📈 提取数据 / Extracted data: 2009M12: 2.7942 $/kg
+📈 提取数据 / Extracted data: 2010M01: 3.0372 $/kg
+📈 提取数据 / Extracted data: 2010M02: 3.0808 $/kg
+📈 提取数据 / Extracted data: 2010M03: 3.1763 $/kg
+📈 提取数据 / Extracted data: 2010M04: 3.2806 $/kg
+📈 提取数据 / Extracted data: 2010M05: 2.8870 $/kg
+📈 提取数据 / Extracted data: 2010M06: 2.9001 $/kg
+📈 提取数据 / Extracted data: 2010M07: 2.9264 $/kg
+📈 提取数据 / Extracted data: 2010M08: 3.1426 $/kg
+📈 提取数据 / Extracted data: 2010M09: 3.3625 $/kg
+📈 提取数据 / Extracted data: 2010M10: 3.8480 $/kg
+📈 提取数据 / Extracted data: 2010M11: 4.2383 $/kg
+📈 提取数据 / Extracted data: 2010M12: 4.6894 $/kg
+📈 提取数据 / Extracted data: 2011M01: 5.3320 $/kg
+📈 提取数据 / Extracted data: 2011M02: 5.5811 $/kg
+📈 提取数据 / Extracted data: 2011M03: 4.8395 $/kg
+📈 提取数据 / Extracted data: 2011M04: 4.9707 $/kg
+📈 提取数据 / Extracted data: 2011M05: 4.5226 $/kg
+📈 提取数据 / Extracted data: 2011M06: 4.5247 $/kg
+📈 提取数据 / Extracted data: 2011M07: 4.5618 $/kg
+📈 提取数据 / Extracted data: 2011M08: 4.6176 $/kg
+📈 提取数据 / Extracted data: 2011M09: 4.5162 $/kg
+📈 提取数据 / Extracted data: 2011M10: 4.0849 $/kg
+📈 提取数据 / Extracted data: 2011M11: 3.3303 $/kg
+📈 提取数据 / Extracted data: 2011M12: 3.3469 $/kg
+📈 提取数据 / Extracted data: 2012M01: 3.5038 $/kg
+📈 提取数据 / Extracted data: 2012M02: 3.7788 $/kg
+📈 提取数据 / Extracted data: 2012M03: 3.7815 $/kg
+📈 提取数据 / Extracted data: 2012M04: 3.6649 $/kg
+📈 提取数据 / Extracted data: 2012M05: 3.3764 $/kg
+📈 提取数据 / Extracted data: 2012M06: 2.8630 $/kg
+📈 提取数据 / Extracted data: 2012M07: 2.8929 $/kg
+📈 提取数据 / Extracted data: 2012M08: 2.5951 $/kg
+📈 提取数据 / Extracted data: 2012M09: 2.7628 $/kg
+📈 提取数据 / Extracted data: 2012M10: 2.9538 $/kg
+📈 提取数据 / Extracted data: 2012M11: 2.8003 $/kg
+📈 提取数据 / Extracted data: 2012M12: 2.8960 $/kg
+📈 提取数据 / Extracted data: 2013M01: 3.0432 $/kg
+📈 提取数据 / Extracted data: 2013M02: 3.0443 $/kg
+📈 提取数据 / Extracted data: 2013M03: 2.8002 $/kg
+📈 提取数据 / Extracted data: 2013M04: 2.4986 $/kg
+📈 提取数据 / Extracted data: 2013M05: 2.5129 $/kg
+📈 提取数据 / Extracted data: 2013M06: 2.3258 $/kg
+📈 提取数据 / Extracted data: 2013M07: 2.2426 $/kg
+📈 提取数据 / Extracted data: 2013M08: 2.3796 $/kg
+📈 提取数据 / Extracted data: 2013M09: 2.4224 $/kg
+📈 提取数据 / Extracted data: 2013M10: 2.3187 $/kg
+📈 提取数据 / Extracted data: 2013M11: 2.3024 $/kg
+📈 提取数据 / Extracted data: 2013M12: 2.3125 $/kg
+📈 提取数据 / Extracted data: 2014M01: 2.1442 $/kg
+📈 提取数据 / Extracted data: 2014M02: 1.9011 $/kg
+📈 提取数据 / Extracted data: 2014M03: 1.9290 $/kg
+📈 提取数据 / Extracted data: 2014M04: 1.7757 $/kg
+📈 提取数据 / Extracted data: 2014M05: 1.6931 $/kg
+📈 提取数据 / Extracted data: 2014M06: 1.7113 $/kg
+📈 提取数据 / Extracted data: 2014M07: 1.7004 $/kg
+📈 提取数据 / Extracted data: 2014M08: 1.6661 $/kg
+📈 提取数据 / Extracted data: 2014M09: 1.5319 $/kg
+📈 提取数据 / Extracted data: 2014M10: 1.5061 $/kg
+📈 提取数据 / Extracted data: 2014M11: 1.5370 $/kg
+📈 提取数据 / Extracted data: 2014M12: 1.4711 $/kg
+📈 提取数据 / Extracted data: 2015M01: 1.4198 $/kg
+📈 提取数据 / Extracted data: 2015M02: 1.4293 $/kg
+📈 提取数据 / Extracted data: 2015M03: 1.4297 $/kg
+📈 提取数据 / Extracted data: 2015M04: 1.4071 $/kg
+📈 提取数据 / Extracted data: 2015M05: 1.5501 $/kg
+📈 提取数据 / Extracted data: 2015M06: 1.5829 $/kg
+📈 提取数据 / Extracted data: 2015M07: 1.4531 $/kg
+📈 提取数据 / Extracted data: 2015M08: 1.3140 $/kg
+📈 提取数据 / Extracted data: 2015M09: 1.2393 $/kg
+📈 提取数据 / Extracted data: 2015M10: 1.2424 $/kg
+📈 提取数据 / Extracted data: 2015M11: 1.1610 $/kg
+📈 提取数据 / Extracted data: 2015M12: 1.1611 $/kg
+📈 提取数据 / Extracted data: 2016M01: 1.0829 $/kg
+📈 提取数据 / Extracted data: 2016M02: 1.0963 $/kg
+📈 提取数据 / Extracted data: 2016M03: 1.2835 $/kg
+📈 提取数据 / Extracted data: 2016M04: 1.4886 $/kg
+📈 提取数据 / Extracted data: 2016M05: 1.3583 $/kg
+📈 提取数据 / Extracted data: 2016M06: 1.2641 $/kg
+📈 提取数据 / Extracted data: 2016M07: 1.2816 $/kg
+📈 提取数据 / Extracted data: 2016M08: 1.2973 $/kg
+📈 提取数据 / Extracted data: 2016M09: 1.3577 $/kg
+📈 提取数据 / Extracted data: 2016M10: 1.4766 $/kg
+📈 提取数据 / Extracted data: 2016M11: 1.6586 $/kg
+📈 提取数据 / Extracted data: 2016M12: 1.9280 $/kg
+📈 提取数据 / Extracted data: 2017M01: 2.1623 $/kg
+📈 提取数据 / Extracted data: 2017M02: 2.2329 $/kg
+📈 提取数据 / Extracted data: 2017M03: 1.9660 $/kg
+📈 提取数据 / Extracted data: 2017M04: 1.6543 $/kg
+📈 提取数据 / Extracted data: 2017M05: 1.5306 $/kg
+📈 提取数据 / Extracted data: 2017M06: 1.4397 $/kg
+📈 提取数据 / Extracted data: 2017M07: 1.5166 $/kg
+📈 提取数据 / Extracted data: 2017M08: 1.5462 $/kg
+📈 提取数据 / Extracted data: 2017M09: 1.6082 $/kg
+📈 提取数据 / Extracted data: 2017M10: 1.4569 $/kg
+📈 提取数据 / Extracted data: 2017M11: 1.4286 $/kg
+📈 提取数据 / Extracted data: 2017M12: 1.4600 $/kg
+📈 提取数据 / Extracted data: 2018M01: 1.5021 $/kg
+📈 提取数据 / Extracted data: 2018M02: 1.4618 $/kg
+📈 提取数据 / Extracted data: 2018M03: 1.4405 $/kg
+📈 提取数据 / Extracted data: 2018M04: 1.3914 $/kg
+📈 提取数据 / Extracted data: 2018M05: 1.4392 $/kg
+📈 提取数据 / Extracted data: 2018M06: 1.3806 $/kg
+📈 提取数据 / Extracted data: 2018M07: 1.3112 $/kg
+📈 提取数据 / Extracted data: 2018M08: 1.3399 $/kg
+📈 提取数据 / Extracted data: 2018M09: 1.3341 $/kg
+📈 提取数据 / Extracted data: 2018M10: 1.3172 $/kg
+📈 提取数据 / Extracted data: 2018M11: 1.2346 $/kg
+📈 提取数据 / Extracted data: 2018M12: 1.2614 $/kg
+📈 提取数据 / Extracted data: 2019M01: 1.3562 $/kg
+📈 提取数据 / Extracted data: 2019M02: 1.3987 $/kg
+📈 提取数据 / Extracted data: 2019M03: 1.4705 $/kg
+📈 提取数据 / Extracted data: 2019M04: 1.5036 $/kg
+📈 提取数据 / Extracted data: 2019M05: 1.4958 $/kg
+📈 提取数据 / Extracted data: 2019M06: 1.5012 $/kg
+📈 提取数据 / Extracted data: 2019M07: 1.4112 $/kg
+📈 提取数据 / Extracted data: 2019M08: 1.3102 $/kg
+📈 提取数据 / Extracted data: 2019M09: 1.3350 $/kg
+📈 提取数据 / Extracted data: 2019M10: 1.2978 $/kg
+📈 提取数据 / Extracted data: 2019M11: 1.3857 $/kg
+📈 提取数据 / Extracted data: 2019M12: 1.4594 $/kg
+📈 提取数据 / Extracted data: 2020M01: 1.4660 $/kg
+📈 提取数据 / Extracted data: 2020M02: 1.3412 $/kg
+📈 提取数据 / Extracted data: 2020M03: 1.2095 $/kg
+📈 提取数据 / Extracted data: 2020M04: 1.1067 $/kg
+📈 提取数据 / Extracted data: 2020M05: 1.1178 $/kg
+📈 提取数据 / Extracted data: 2020M06: 1.1731 $/kg
+📈 提取数据 / Extracted data: 2020M07: 1.2003 $/kg
+📈 提取数据 / Extracted data: 2020M08: 1.3214 $/kg
+📈 提取数据 / Extracted data: 2020M09: 1.3705 $/kg
+📈 提取数据 / Extracted data: 2020M10: 1.5285 $/kg
+📈 提取数据 / Extracted data: 2020M11: 1.5592 $/kg
+📈 提取数据 / Extracted data: 2020M12: 1.5724 $/kg
+📈 提取数据 / Extracted data: 2021M01: 1.5943 $/kg
+📈 提取数据 / Extracted data: 2021M02: 1.6803 $/kg
+📈 提取数据 / Extracted data: 2021M03: 1.7435 $/kg
+📈 提取数据 / Extracted data: 2021M04: 1.6424 $/kg
+📈 提取数据 / Extracted data: 2021M05: 1.6913 $/kg
+📈 提取数据 / Extracted data: 2021M06: 1.6381 $/kg
+📈 提取数据 / Extracted data: 2021M07: 1.6312 $/kg
+📈 提取数据 / Extracted data: 2021M08: 1.7064 $/kg
+📈 提取数据 / Extracted data: 2021M09: 1.6255 $/kg
+📈 提取数据 / Extracted data: 2021M10: 1.7317 $/kg
+📈 提取数据 / Extracted data: 2021M11: 1.7448 $/kg
+📈 提取数据 / Extracted data: 2021M12: 1.7222 $/kg
+📈 提取数据 / Extracted data: 2022M01: 1.7791 $/kg
+📈 提取数据 / Extracted data: 2022M02: 1.7905 $/kg
+📈 提取数据 / Extracted data: 2022M03: 1.7454 $/kg
+📈 提取数据 / Extracted data: 2022M04: 1.7027 $/kg
+📈 提取数据 / Extracted data: 2022M05: 1.6174 $/kg
+📈 提取数据 / Extracted data: 2022M06: 1.6362 $/kg
+📈 提取数据 / Extracted data: 2022M07: 1.5561 $/kg
+📈 提取数据 / Extracted data: 2022M08: 1.4623 $/kg
+📈 提取数据 / Extracted data: 2022M09: 1.3227 $/kg
+📈 提取数据 / Extracted data: 2022M10: 1.2885 $/kg
+📈 提取数据 / Extracted data: 2022M11: 1.2700 $/kg
+📈 提取数据 / Extracted data: 2022M12: 1.3461 $/kg
+📈 提取数据 / Extracted data: 2023M01: 1.4117 $/kg
+📈 提取数据 / Extracted data: 2023M02: 1.4012 $/kg
+📈 提取数据 / Extracted data: 2023M03: 1.3574 $/kg
+📈 提取数据 / Extracted data: 2023M04: 1.3581 $/kg
+📈 提取数据 / Extracted data: 2023M05: 1.3505 $/kg
+📈 提取数据 / Extracted data: 2023M06: 1.3188 $/kg
+📈 提取数据 / Extracted data: 2023M07: 1.2992 $/kg
+📈 提取数据 / Extracted data: 2023M08: 1.2924 $/kg
+📈 提取数据 / Extracted data: 2023M09: 1.4182 $/kg
+📈 提取数据 / Extracted data: 2023M10: 1.4481 $/kg
+📈 提取数据 / Extracted data: 2023M11: 1.4801 $/kg
+📈 提取数据 / Extracted data: 2023M12: 1.4568 $/kg
+📈 提取数据 / Extracted data: 2024M01: 1.5299 $/kg
+📈 提取数据 / Extracted data: 2024M02: 1.5589 $/kg
+📈 提取数据 / Extracted data: 2024M03: 1.6498 $/kg
+📈 提取数据 / Extracted data: 2024M04: 1.6294 $/kg
+📈 提取数据 / Extracted data: 2024M05: 1.6934 $/kg
+📈 提取数据 / Extracted data: 2024M06: 1.7532 $/kg
+📈 提取数据 / Extracted data: 2024M07: 1.6503 $/kg
+📈 提取数据 / Extracted data: 2024M08: 1.7374 $/kg
+📈 提取数据 / Extracted data: 2024M09: 1.9068 $/kg
+📈 提取数据 / Extracted data: 2024M10: 2.0093 $/kg
+📈 提取数据 / Extracted data: 2024M11: 1.9321 $/kg
+📈 提取数据 / Extracted data: 2024M12: 1.9937 $/kg
+📈 提取数据 / Extracted data: 2025M01: 1.9328 $/kg
+📈 提取数据 / Extracted data: 2025M02: 2.0051 $/kg
+📈 提取数据 / Extracted data: 2025M03: 1.9816 $/kg
+📈 提取数据 / Extracted data: 2025M04: 1.7065 $/kg
+📈 提取数据 / Extracted data: 2025M05: 1.7031 $/kg
+✅ 数据提取完成 / Data extraction completed: 317 条记录 / records
+
+📝 保存结果到文件 / Saving results to file: rubber_prices.txt
+✅ 结果已保存 / Results saved: 317 条记录 / records
+
+📊 橡胶价格数据 / Rubber Price Data (前10条 / First 10):
+==================================================
+1999M01: 0.5979 $/kg
+1999M02: 0.5587 $/kg
+1999M03: 0.5224 $/kg
+1999M04: 0.5236 $/kg
+1999M05: 0.5505 $/kg
+1999M06: 0.5540 $/kg
+1999M07: 0.5109 $/kg
+1999M08: 0.5392 $/kg
+1999M09: 0.5967 $/kg
+1999M10: 0.6793 $/kg
+...
+
+📊 橡胶价格数据 / Rubber Price Data (后10条 / Last 10):
+==================================================
+2024M08: 1.7374 $/kg
+2024M09: 1.9068 $/kg
+2024M10: 2.0093 $/kg
+2024M11: 1.9321 $/kg
+2024M12: 1.9937 $/kg
+2025M01: 1.9328 $/kg
+2025M02: 2.0051 $/kg
+2025M03: 1.9816 $/kg
+2025M04: 1.7065 $/kg
+2025M05: 1.7031 $/kg
+
+🎉 程序执行完成 / Program completed successfully!
+📁 输出文件 / Output file: rubber_prices.txt
+📊 数据记录数 / Data records: 317
+
+2025-07-02 10:07:44,387 - INFO - ✅ 模块执行成功 / Module executed successfully: Commodity Price Crawler
+2025-07-02 10:07:44,387 - INFO - 📤 处理输出文件 / Processing output files...
+2025-07-02 10:07:44,390 - INFO - 📈 获取到 317 条数据记录 / Retrieved 317 data records
+2025-07-02 10:07:44,390 - INFO - ==================================================
+2025-07-02 10:07:44,390 - INFO - 
+📊 [2/4] 执行模块 / Executing module: BLS Data Scraper (BLS数据爬虫)
+2025-07-02 10:07:44,390 - INFO - 📁 脚本路径 / Script path: func2/bls_scraper_auto.py
+2025-07-02 10:07:44,390 - INFO - 开始执行脚本 / Starting script: func2/bls_scraper_auto.py
+2025-07-02 10:07:44,390 - INFO - 切换到目录 / Changed to directory: func2
+2025-07-02 10:09:14,349 - INFO - 脚本执行成功 / Script executed successfully: func2/bls_scraper_auto.py
+2025-07-02 10:09:14,349 - INFO - ✅ 模块执行成功 / Module executed successfully: BLS Data Scraper
+2025-07-02 10:09:14,349 - INFO - 📤 处理输出文件 / Processing output files...
+2025-07-02 10:09:14,359 - INFO - 成功读取Excel文件 / Successfully read Excel file: func2/output/combined_data.xlsx
+2025-07-02 10:09:14,359 - INFO - 数据形状 / Data shape: (138, 5)
+2025-07-02 10:09:14,359 - WARNING - 输出文件不存在 / Output file does not exist: func2/bls_data.xlsx
+2025-07-02 10:09:14,359 - INFO - 📈 获取到 138 条数据记录 / Retrieved 138 data records
+2025-07-02 10:09:14,359 - INFO - ==================================================
+2025-07-02 10:09:14,359 - INFO - 
+📊 [3/4] 执行模块 / Executing module: Exchange Rate Scraper (汇率数据爬虫)
+2025-07-02 10:09:14,359 - INFO - 📁 脚本路径 / Script path: func3/exchange_rate_scraper.py
+2025-07-02 10:09:14,359 - INFO - 开始执行脚本 / Starting script: func3/exchange_rate_scraper.py
+2025-07-02 10:09:14,359 - INFO - 切换到目录 / Changed to directory: func3
+2025-07-02 10:09:22,102 - INFO - 脚本执行成功 / Script executed successfully: func3/exchange_rate_scraper.py
+2025-07-02 10:09:22,102 - INFO - 输出 / Output:
+USD到EUR汇率数据爬虫 / USD to EUR Exchange Rate Scraper
+============================================================
+目标年份 / Target years: 2021 - 2025
+输出文件 / Output files: exchange_rates.txt, exchange_rates.xlsx
+============================================================
+开始爬取汇率数据... / Starting to scrape exchange rate data...
+==================================================
+
+处理年份 / Processing year: 2021
+正在访问 / Fetching: https://www.x-rates.com/average/?from=USD&to=EUR&amount=1&year=2021 (尝试 1/3)
+找到 12 个月份元素和 12 个汇率元素 / Found 12 month elements and 12 rate elements
+提取数据 / Extracted data: 2021M01 -> 0.821704
+提取数据 / Extracted data: 2021M02 -> 0.826723
+提取数据 / Extracted data: 2021M03 -> 0.839597
+提取数据 / Extracted data: 2021M04 -> 0.836743
+提取数据 / Extracted data: 2021M05 -> 0.823758
+提取数据 / Extracted data: 2021M06 -> 0.830102
+提取数据 / Extracted data: 2021M07 -> 0.845531
+提取数据 / Extracted data: 2021M08 -> 0.849518
+提取数据 / Extracted data: 2021M09 -> 0.849032
+提取数据 / Extracted data: 2021M10 -> 0.862206
+提取数据 / Extracted data: 2021M11 -> 0.876354
+提取数据 / Extracted data: 2021M12 -> 0.884622
+年份 2021 提取了 12 条记录 / Year 2021 extracted 12 records
+
+处理年份 / Processing year: 2022
+正在访问 / Fetching: https://www.x-rates.com/average/?from=USD&to=EUR&amount=1&year=2022 (尝试 1/3)
+找到 12 个月份元素和 12 个汇率元素 / Found 12 month elements and 12 rate elements
+提取数据 / Extracted data: 2022M01 -> 0.882991
+提取数据 / Extracted data: 2022M02 -> 0.881757
+提取数据 / Extracted data: 2022M03 -> 0.908265
+提取数据 / Extracted data: 2022M04 -> 0.923303
+提取数据 / Extracted data: 2022M05 -> 0.946206
+提取数据 / Extracted data: 2022M06 -> 0.945712
+提取数据 / Extracted data: 2022M07 -> 0.980067
+提取数据 / Extracted data: 2022M08 -> 0.987932
+提取数据 / Extracted data: 2022M09 -> 1.008235
+提取数据 / Extracted data: 2022M10 -> 1.017115
+提取数据 / Extracted data: 2022M11 -> 0.979964
+提取数据 / Extracted data: 2022M12 -> 0.944770
+年份 2022 提取了 12 条记录 / Year 2022 extracted 12 records
+
+处理年份 / Processing year: 2023
+正在访问 / Fetching: https://www.x-rates.com/average/?from=USD&to=EUR&amount=1&year=2023 (尝试 1/3)
+找到 12 个月份元素和 12 个汇率元素 / Found 12 month elements and 12 rate elements
+提取数据 / Extracted data: 2023M01 -> 0.927553
+提取数据 / Extracted data: 2023M02 -> 0.933614
+提取数据 / Extracted data: 2023M03 -> 0.934133
+提取数据 / Extracted data: 2023M04 -> 0.910962
+提取数据 / Extracted data: 2023M05 -> 0.918837
+提取数据 / Extracted data: 2023M06 -> 0.922745
+提取数据 / Extracted data: 2023M07 -> 0.904728
+提取数据 / Extracted data: 2023M08 -> 0.916236
+提取数据 / Extracted data: 2023M09 -> 0.935779
+提取数据 / Extracted data: 2023M10 -> 0.946433
+提取数据 / Extracted data: 2023M11 -> 0.925158
+提取数据 / Extracted data: 2023M12 -> 0.916024
+年份 2023 提取了 12 条记录 / Year 2023 extracted 12 records
+
+处理年份 / Processing year: 2024
+正在访问 / Fetching: https://www.x-rates.com/average/?from=USD&to=EUR&amount=1&year=2024 (尝试 1/3)
+找到 12 个月份元素和 12 个汇率元素 / Found 12 month elements and 12 rate elements
+提取数据 / Extracted data: 2024M01 -> 0.916002
+提取数据 / Extracted data: 2024M02 -> 0.926416
+提取数据 / Extracted data: 2024M03 -> 0.919929
+提取数据 / Extracted data: 2024M04 -> 0.932321
+提取数据 / Extracted data: 2024M05 -> 0.925324
+提取数据 / Extracted data: 2024M06 -> 0.928905
+提取数据 / Extracted data: 2024M07 -> 0.921567
+提取数据 / Extracted data: 2024M08 -> 0.907876
+提取数据 / Extracted data: 2024M09 -> 0.900302
+提取数据 / Extracted data: 2024M10 -> 0.917120
+提取数据 / Extracted data: 2024M11 -> 0.940202
+提取数据 / Extracted data: 2024M12 -> 0.954297
+年份 2024 提取了 12 条记录 / Year 2024 extracted 12 records
+
+处理年份 / Processing year: 2025
+正在访问 / Fetching: https://www.x-rates.com/average/?from=USD&to=EUR&amount=1&year=2025 (尝试 1/3)
+找到 7 个月份元素和 7 个汇率元素 / Found 7 month elements and 7 rate elements
+提取数据 / Extracted data: 2025M01 -> 0.966388
+提取数据 / Extracted data: 2025M02 -> 0.960447
+提取数据 / Extracted data: 2025M03 -> 0.926906
+提取数据 / Extracted data: 2025M04 -> 0.891211
+提取数据 / Extracted data: 2025M05 -> 0.886863
+提取数据 / Extracted data: 2025M06 -> 0.868230
+提取数据 / Extracted data: 2025M07 -> 0.848411
+年份 2025 提取了 7 条记录 / Year 2025 extracted 7 records
+数据已保存到文件 / Data saved to file: exchange_rates.txt
+Excel数据已保存到文件 / Excel data saved to file: exchange_rates.xlsx
+
+============================================================
+数据汇总 / Data Summary
+============================================================
+年份 / Year 2021: 12 条记录 / records
+  数据 / Data:
+    2021M01 0.821704
+    2021M02 0.826723
+    2021M03 0.839597
+    2021M04 0.836743
+    2021M05 0.823758
+    2021M06 0.830102
+    2021M07 0.845531
+    2021M08 0.849518
+    2021M09 0.849032
+    2021M10 0.862206
+    2021M11 0.876354
+    2021M12 0.884622
+
+年份 / Year 2022: 12 条记录 / records
+  数据 / Data:
+    2022M01 0.882991
+    2022M02 0.881757
+    2022M03 0.908265
+    2022M04 0.923303
+    2022M05 0.946206
+    2022M06 0.945712
+    2022M07 0.980067
+    2022M08 0.987932
+    2022M09 1.008235
+    2022M10 1.017115
+    2022M11 0.979964
+    2022M12 0.944770
+
+年份 / Year 2023: 12 条记录 / records
+  数据 / Data:
+    2023M01 0.927553
+    2023M02 0.933614
+    2023M03 0.934133
+    2023M04 0.910962
+    2023M05 0.918837
+    2023M06 0.922745
+    2023M07 0.904728
+    2023M08 0.916236
+    2023M09 0.935779
+    2023M10 0.946433
+    2023M11 0.925158
+    2023M12 0.916024
+
+年份 / Year 2024: 12 条记录 / records
+  数据 / Data:
+    2024M01 0.916002
+    2024M02 0.926416
+    2024M03 0.919929
+    2024M04 0.932321
+    2024M05 0.925324
+    2024M06 0.928905
+    2024M07 0.921567
+    2024M08 0.907876
+    2024M09 0.900302
+    2024M10 0.917120
+    2024M11 0.940202
+    2024M12 0.954297
+
+年份 / Year 2025: 7 条记录 / records
+  数据 / Data:
+    2025M01 0.966388
+    2025M02 0.960447
+    2025M03 0.926906
+    2025M04 0.891211
+    2025M05 0.886863
+    2025M06 0.868230
+    2025M07 0.848411
+
+总计 / Total: 55 条记录 / records
+============================================================
+
+脚本执行完成！/ Script execution completed!
+
+2025-07-02 10:09:22,102 - INFO - ✅ 模块执行成功 / Module executed successfully: Exchange Rate Scraper
+2025-07-02 10:09:22,102 - INFO - 📤 处理输出文件 / Processing output files...
+2025-07-02 10:09:22,108 - INFO - 成功读取Excel文件 / Successfully read Excel file: func3/exchange_rates.xlsx
+2025-07-02 10:09:22,108 - INFO - 数据形状 / Data shape: (55, 5)
+2025-07-02 10:09:22,108 - INFO - 📈 获取到 55 条数据记录 / Retrieved 55 data records
+2025-07-02 10:09:22,108 - INFO - ==================================================
+2025-07-02 10:09:22,108 - INFO - 
+📊 [4/4] 执行模块 / Executing module: FRED Data Scraper (FRED数据爬虫)
+2025-07-02 10:09:22,108 - INFO - 📁 脚本路径 / Script path: func4/run.py
+2025-07-02 10:09:22,108 - INFO - 开始执行脚本 / Starting script: func4/run.py
+2025-07-02 10:09:22,108 - INFO - 切换到目录 / Changed to directory: func4
+2025-07-02 10:09:28,524 - INFO - 脚本执行成功 / Script executed successfully: func4/run.py
+2025-07-02 10:09:28,524 - INFO - 输出 / Output:
+🚀 FRED数据爬取器
+⏰ 运行时间: 2025-07-02 10:09:22
+==================================================
+📊 开始爬取FRED数据...
+📁 输出目录: output
+
+✅ 数据爬取完成！
+📁 查看输出文件: output/
+   - PCU314994314994.xlsx (原始下载文件)
+   - PCU314994314994_processed.xlsx (处理后文件)
+
+2025-07-02 10:09:28,524 - INFO - ✅ 模块执行成功 / Module executed successfully: FRED Data Scraper
+2025-07-02 10:09:28,524 - INFO - 📤 处理输出文件 / Processing output files...
+2025-07-02 10:09:28,529 - INFO - 成功读取Excel文件 / Successfully read Excel file: func4/output/PCU314994314994_processed.xlsx
+2025-07-02 10:09:28,529 - INFO - 数据形状 / Data shape: (167, 1)
+2025-07-02 10:09:28,532 - INFO - 成功读取Excel文件 / Successfully read Excel file: func4/output/PCU314994314994.xlsx
+2025-07-02 10:09:28,532 - INFO - 数据形状 / Data shape: (7, 3)
+2025-07-02 10:09:28,535 - INFO - 📈 获取到 174 条数据记录 / Retrieved 174 data records
+2025-07-02 10:09:28,535 - INFO - ==================================================
+2025-07-02 10:09:28,535 - INFO - 
+📋 创建整合Excel文件 / Creating integrated Excel file...
+2025-07-02 10:09:28,538 - INFO - 创建汇总工作表 / Created summary worksheet
+2025-07-02 10:09:28,541 - INFO - 写入数据到工作表 / Wrote data to worksheet: Rubber_Prices (317 行记录 / records)
+2025-07-02 10:09:28,543 - INFO - 写入数据到工作表 / Wrote data to worksheet: BLS_Data (138 行记录 / records)
+2025-07-02 10:09:28,545 - INFO - 写入数据到工作表 / Wrote data to worksheet: Exchange_Rates (55 行记录 / records)
+2025-07-02 10:09:28,548 - INFO - 写入数据到工作表 / Wrote data to worksheet: FRED_Data (174 行记录 / records)
+2025-07-02 10:09:28,549 - INFO - 创建元数据工作表 / Created metadata worksheet
+2025-07-02 10:09:28,563 - INFO - 整合Excel文件创建成功 / Integrated Excel file created successfully: integrated_data.xlsx
+2025-07-02 10:09:28,563 - INFO - 
+================================================================================
+2025-07-02 10:09:28,563 - INFO - 🎉 数据整合程序完成 / Data Integration Program Completed
+2025-07-02 10:09:28,564 - INFO - ================================================================================
+2025-07-02 10:09:28,564 - INFO - ⏱️  总耗时 / Total duration: 0:01:44.715073
+2025-07-02 10:09:28,564 - INFO - 📁 输出文件 / Output file: integrated_data.xlsx
+2025-07-02 10:09:28,564 - INFO - 📊 执行结果 / Execution results: 4/4 成功 / successful
+2025-07-02 10:09:28,564 - INFO -    Commodity Price Crawler: ✅ 成功 / Success
+2025-07-02 10:09:28,564 - INFO -    BLS Data Scraper: ✅ 成功 / Success
+2025-07-02 10:09:28,564 - INFO -    Exchange Rate Scraper: ✅ 成功 / Success
+2025-07-02 10:09:28,564 - INFO -    FRED Data Scraper: ✅ 成功 / Success
+2025-07-02 10:09:28,564 - INFO - 🎊 所有模块执行成功！/ All modules executed successfully!
+2025-07-02 10:09:28,564 - INFO - ================================================================================
+2025-07-02 10:26:01,094 - INFO - ================================================================================
+2025-07-02 10:26:01,094 - INFO - 🚀 数据整合程序启动 / Data Integration Program Started
+2025-07-02 10:26:01,094 - INFO - ================================================================================
+2025-07-02 10:26:01,095 - INFO - 
+📊 [1/4] 执行模块 / Executing module: Commodity Price Crawler (商品价格爬虫)
+2025-07-02 10:26:01,095 - INFO - 📁 脚本路径 / Script path: func1/commodity_price_crawler.py
+2025-07-02 10:26:01,095 - INFO - 开始执行脚本 / Starting script: func1/commodity_price_crawler.py
+2025-07-02 10:26:01,095 - INFO - 切换到目录 / Changed to directory: func1
+2025-07-02 10:26:01,625 - INFO - 脚本执行成功 / Script executed successfully: func1/commodity_price_crawler.py
+2025-07-02 10:26:01,625 - INFO - 输出 / Output:
+🚀 商品数据爬虫启动 / Commodity Data Crawler Started
+============================================================
+ℹ️  文件已存在，跳过下载 / File already exists, skipping download: CMO-Historical-Data-Monthly.xlsx
+📂 打开Excel文件 / Opening Excel file: CMO-Historical-Data-Monthly.xlsx
+✅ 工作表加载成功 / Worksheet loaded successfully: Monthly Prices
+🔍 查找目标列 / Looking for target column: Rubber, TSR20 **
+✅ 找到目标列 / Found target column: BD - Rubber, TSR20 **
+📊 开始提取数据 / Starting data extraction...
+📈 提取数据 / Extracted data: 1999M01: 0.5979 $/kg
+📈 提取数据 / Extracted data: 1999M02: 0.5587 $/kg
+📈 提取数据 / Extracted data: 1999M03: 0.5224 $/kg
+📈 提取数据 / Extracted data: 1999M04: 0.5236 $/kg
+📈 提取数据 / Extracted data: 1999M05: 0.5505 $/kg
+📈 提取数据 / Extracted data: 1999M06: 0.5540 $/kg
+📈 提取数据 / Extracted data: 1999M07: 0.5109 $/kg
+📈 提取数据 / Extracted data: 1999M08: 0.5392 $/kg
+📈 提取数据 / Extracted data: 1999M09: 0.5967 $/kg
+📈 提取数据 / Extracted data: 1999M10: 0.6793 $/kg
+📈 提取数据 / Extracted data: 1999M11: 0.7639 $/kg
+📈 提取数据 / Extracted data: 1999M12: 0.6958 $/kg
+📈 提取数据 / Extracted data: 2000M01: 0.7069 $/kg
+📈 提取数据 / Extracted data: 2000M02: 0.7304 $/kg
+📈 提取数据 / Extracted data: 2000M03: 0.6555 $/kg
+📈 提取数据 / Extracted data: 2000M04: 0.6441 $/kg
+📈 提取数据 / Extracted data: 2000M05: 0.6171 $/kg
+📈 提取数据 / Extracted data: 2000M06: 0.5957 $/kg
+📈 提取数据 / Extracted data: 2000M07: 0.5790 $/kg
+📈 提取数据 / Extracted data: 2000M08: 0.6073 $/kg
+📈 提取数据 / Extracted data: 2000M09: 0.6049 $/kg
+📈 提取数据 / Extracted data: 2000M10: 0.6056 $/kg
+📈 提取数据 / Extracted data: 2000M11: 0.6015 $/kg
+📈 提取数据 / Extracted data: 2000M12: 0.6026 $/kg
+📈 提取数据 / Extracted data: 2001M01: 0.5986 $/kg
+📈 提取数据 / Extracted data: 2001M02: 0.5711 $/kg
+📈 提取数据 / Extracted data: 2001M03: 0.5182 $/kg
+📈 提取数据 / Extracted data: 2001M04: 0.5120 $/kg
+📈 提取数据 / Extracted data: 2001M05: 0.5140 $/kg
+📈 提取数据 / Extracted data: 2001M06: 0.5140 $/kg
+📈 提取数据 / Extracted data: 2001M07: 0.5040 $/kg
+📈 提取数据 / Extracted data: 2001M08: 0.5293 $/kg
+📈 提取数据 / Extracted data: 2001M09: 0.4935 $/kg
+📈 提取数据 / Extracted data: 2001M10: 0.4821 $/kg
+📈 提取数据 / Extracted data: 2001M11: 0.4670 $/kg
+📈 提取数据 / Extracted data: 2001M12: 0.4794 $/kg
+📈 提取数据 / Extracted data: 2002M01: 0.5388 $/kg
+📈 提取数据 / Extracted data: 2002M02: 0.5831 $/kg
+📈 提取数据 / Extracted data: 2002M03: 0.6814 $/kg
+📈 提取数据 / Extracted data: 2002M04: 0.6422 $/kg
+📈 提取数据 / Extracted data: 2002M05: 0.6814 $/kg
+📈 提取数据 / Extracted data: 2002M06: 0.8314 $/kg
+📈 提取数据 / Extracted data: 2002M07: 0.8128 $/kg
+📈 提取数据 / Extracted data: 2002M08: 0.8306 $/kg
+📈 提取数据 / Extracted data: 2002M09: 0.8955 $/kg
+📈 提取数据 / Extracted data: 2002M10: 0.8313 $/kg
+📈 提取数据 / Extracted data: 2002M11: 0.8403 $/kg
+📈 提取数据 / Extracted data: 2002M12: 0.8496 $/kg
+📈 提取数据 / Extracted data: 2003M01: 0.9031 $/kg
+📈 提取数据 / Extracted data: 2003M02: 0.9400 $/kg
+📈 提取数据 / Extracted data: 2003M03: 0.9458 $/kg
+📈 提取数据 / Extracted data: 2003M04: 0.8780 $/kg
+📈 提取数据 / Extracted data: 2003M05: 0.8370 $/kg
+📈 提取数据 / Extracted data: 2003M06: 0.8443 $/kg
+📈 提取数据 / Extracted data: 2003M07: 0.8752 $/kg
+📈 提取数据 / Extracted data: 2003M08: 0.9477 $/kg
+📈 提取数据 / Extracted data: 2003M09: 1.0869 $/kg
+📈 提取数据 / Extracted data: 2003M10: 1.2938 $/kg
+📈 提取数据 / Extracted data: 2003M11: 1.2621 $/kg
+📈 提取数据 / Extracted data: 2003M12: 1.2350 $/kg
+📈 提取数据 / Extracted data: 2004M01: 1.2100 $/kg
+📈 提取数据 / Extracted data: 2004M02: 1.2462 $/kg
+📈 提取数据 / Extracted data: 2004M03: 1.2705 $/kg
+📈 提取数据 / Extracted data: 2004M04: 1.2718 $/kg
+📈 提取数据 / Extracted data: 2004M05: 1.2390 $/kg
+📈 提取数据 / Extracted data: 2004M06: 1.1960 $/kg
+📈 提取数据 / Extracted data: 2004M07: 1.1458 $/kg
+📈 提取数据 / Extracted data: 2004M08: 1.1388 $/kg
+📈 提取数据 / Extracted data: 2004M09: 1.1450 $/kg
+📈 提取数据 / Extracted data: 2004M10: 1.2129 $/kg
+📈 提取数据 / Extracted data: 2004M11: 1.2163 $/kg
+📈 提取数据 / Extracted data: 2004M12: 1.1869 $/kg
+📈 提取数据 / Extracted data: 2005M01: 1.1875 $/kg
+📈 提取数据 / Extracted data: 2005M02: 1.2163 $/kg
+📈 提取数据 / Extracted data: 2005M03: 1.2226 $/kg
+📈 提取数据 / Extracted data: 2005M04: 1.2095 $/kg
+📈 提取数据 / Extracted data: 2005M05: 1.2061 $/kg
+📈 提取数据 / Extracted data: 2005M06: 1.2669 $/kg
+📈 提取数据 / Extracted data: 2005M07: 1.4524 $/kg
+📈 提取数据 / Extracted data: 2005M08: 1.4393 $/kg
+📈 提取数据 / Extracted data: 2005M09: 1.5940 $/kg
+📈 提取数据 / Extracted data: 2005M10: 1.6296 $/kg
+📈 提取数据 / Extracted data: 2005M11: 1.5808 $/kg
+📈 提取数据 / Extracted data: 2005M12: 1.6313 $/kg
+📈 提取数据 / Extracted data: 2006M01: 1.7615 $/kg
+📈 提取数据 / Extracted data: 2006M02: 1.9259 $/kg
+📈 提取数据 / Extracted data: 2006M03: 1.9127 $/kg
+📈 提取数据 / Extracted data: 2006M04: 1.9409 $/kg
+📈 提取数据 / Extracted data: 2006M05: 2.1543 $/kg
+📈 提取数据 / Extracted data: 2006M06: 2.3492 $/kg
+📈 提取数据 / Extracted data: 2006M07: 2.3081 $/kg
+📈 提取数据 / Extracted data: 2006M08: 2.1357 $/kg
+📈 提取数据 / Extracted data: 2006M09: 1.8115 $/kg
+📈 提取数据 / Extracted data: 2006M10: 1.7926 $/kg
+📈 提取数据 / Extracted data: 2006M11: 1.6150 $/kg
+📈 提取数据 / Extracted data: 2006M12: 1.6454 $/kg
+📈 提取数据 / Extracted data: 2007M01: 1.9395 $/kg
+📈 提取数据 / Extracted data: 2007M02: 2.1174 $/kg
+📈 提取数据 / Extracted data: 2007M03: 2.0525 $/kg
+📈 提取数据 / Extracted data: 2007M04: 2.1650 $/kg
+📈 提取数据 / Extracted data: 2007M05: 2.2192 $/kg
+📈 提取数据 / Extracted data: 2007M06: 2.1098 $/kg
+📈 提取数据 / Extracted data: 2007M07: 2.0401 $/kg
+📈 提取数据 / Extracted data: 2007M08: 2.0685 $/kg
+📈 提取数据 / Extracted data: 2007M09: 2.1111 $/kg
+📈 提取数据 / Extracted data: 2007M10: 2.2628 $/kg
+📈 提取数据 / Extracted data: 2007M11: 2.3732 $/kg
+📈 提取数据 / Extracted data: 2007M12: 2.4088 $/kg
+📈 提取数据 / Extracted data: 2008M01: 2.5345 $/kg
+📈 提取数据 / Extracted data: 2008M02: 2.7213 $/kg
+📈 提取数据 / Extracted data: 2008M03: 2.6961 $/kg
+📈 提取数据 / Extracted data: 2008M04: 2.7039 $/kg
+📈 提取数据 / Extracted data: 2008M05: 2.9603 $/kg
+📈 提取数据 / Extracted data: 2008M06: 3.1710 $/kg
+📈 提取数据 / Extracted data: 2008M07: 3.1960 $/kg
+📈 提取数据 / Extracted data: 2008M08: 2.9138 $/kg
+📈 提取数据 / Extracted data: 2008M09: 2.8073 $/kg
+📈 提取数据 / Extracted data: 2008M10: 1.8623 $/kg
+📈 提取数据 / Extracted data: 2008M11: 1.6161 $/kg
+📈 提取数据 / Extracted data: 2008M12: 1.1773 $/kg
+📈 提取数据 / Extracted data: 2009M01: 1.4079 $/kg
+📈 提取数据 / Extracted data: 2009M02: 1.2977 $/kg
+📈 提取数据 / Extracted data: 2009M03: 1.2775 $/kg
+📈 提取数据 / Extracted data: 2009M04: 1.4830 $/kg
+📈 提取数据 / Extracted data: 2009M05: 1.5616 $/kg
+📈 提取数据 / Extracted data: 2009M06: 1.5268 $/kg
+📈 提取数据 / Extracted data: 2009M07: 1.5955 $/kg
+📈 提取数据 / Extracted data: 2009M08: 1.8389 $/kg
+📈 提取数据 / Extracted data: 2009M09: 2.0666 $/kg
+📈 提取数据 / Extracted data: 2009M10: 2.2637 $/kg
+📈 提取数据 / Extracted data: 2009M11: 2.4888 $/kg
+📈 提取数据 / Extracted data: 2009M12: 2.7942 $/kg
+📈 提取数据 / Extracted data: 2010M01: 3.0372 $/kg
+📈 提取数据 / Extracted data: 2010M02: 3.0808 $/kg
+📈 提取数据 / Extracted data: 2010M03: 3.1763 $/kg
+📈 提取数据 / Extracted data: 2010M04: 3.2806 $/kg
+📈 提取数据 / Extracted data: 2010M05: 2.8870 $/kg
+📈 提取数据 / Extracted data: 2010M06: 2.9001 $/kg
+📈 提取数据 / Extracted data: 2010M07: 2.9264 $/kg
+📈 提取数据 / Extracted data: 2010M08: 3.1426 $/kg
+📈 提取数据 / Extracted data: 2010M09: 3.3625 $/kg
+📈 提取数据 / Extracted data: 2010M10: 3.8480 $/kg
+📈 提取数据 / Extracted data: 2010M11: 4.2383 $/kg
+📈 提取数据 / Extracted data: 2010M12: 4.6894 $/kg
+📈 提取数据 / Extracted data: 2011M01: 5.3320 $/kg
+📈 提取数据 / Extracted data: 2011M02: 5.5811 $/kg
+📈 提取数据 / Extracted data: 2011M03: 4.8395 $/kg
+📈 提取数据 / Extracted data: 2011M04: 4.9707 $/kg
+📈 提取数据 / Extracted data: 2011M05: 4.5226 $/kg
+📈 提取数据 / Extracted data: 2011M06: 4.5247 $/kg
+📈 提取数据 / Extracted data: 2011M07: 4.5618 $/kg
+📈 提取数据 / Extracted data: 2011M08: 4.6176 $/kg
+📈 提取数据 / Extracted data: 2011M09: 4.5162 $/kg
+📈 提取数据 / Extracted data: 2011M10: 4.0849 $/kg
+📈 提取数据 / Extracted data: 2011M11: 3.3303 $/kg
+📈 提取数据 / Extracted data: 2011M12: 3.3469 $/kg
+📈 提取数据 / Extracted data: 2012M01: 3.5038 $/kg
+📈 提取数据 / Extracted data: 2012M02: 3.7788 $/kg
+📈 提取数据 / Extracted data: 2012M03: 3.7815 $/kg
+📈 提取数据 / Extracted data: 2012M04: 3.6649 $/kg
+📈 提取数据 / Extracted data: 2012M05: 3.3764 $/kg
+📈 提取数据 / Extracted data: 2012M06: 2.8630 $/kg
+📈 提取数据 / Extracted data: 2012M07: 2.8929 $/kg
+📈 提取数据 / Extracted data: 2012M08: 2.5951 $/kg
+📈 提取数据 / Extracted data: 2012M09: 2.7628 $/kg
+📈 提取数据 / Extracted data: 2012M10: 2.9538 $/kg
+📈 提取数据 / Extracted data: 2012M11: 2.8003 $/kg
+📈 提取数据 / Extracted data: 2012M12: 2.8960 $/kg
+📈 提取数据 / Extracted data: 2013M01: 3.0432 $/kg
+📈 提取数据 / Extracted data: 2013M02: 3.0443 $/kg
+📈 提取数据 / Extracted data: 2013M03: 2.8002 $/kg
+📈 提取数据 / Extracted data: 2013M04: 2.4986 $/kg
+📈 提取数据 / Extracted data: 2013M05: 2.5129 $/kg
+📈 提取数据 / Extracted data: 2013M06: 2.3258 $/kg
+📈 提取数据 / Extracted data: 2013M07: 2.2426 $/kg
+📈 提取数据 / Extracted data: 2013M08: 2.3796 $/kg
+📈 提取数据 / Extracted data: 2013M09: 2.4224 $/kg
+📈 提取数据 / Extracted data: 2013M10: 2.3187 $/kg
+📈 提取数据 / Extracted data: 2013M11: 2.3024 $/kg
+📈 提取数据 / Extracted data: 2013M12: 2.3125 $/kg
+📈 提取数据 / Extracted data: 2014M01: 2.1442 $/kg
+📈 提取数据 / Extracted data: 2014M02: 1.9011 $/kg
+📈 提取数据 / Extracted data: 2014M03: 1.9290 $/kg
+📈 提取数据 / Extracted data: 2014M04: 1.7757 $/kg
+📈 提取数据 / Extracted data: 2014M05: 1.6931 $/kg
+📈 提取数据 / Extracted data: 2014M06: 1.7113 $/kg
+📈 提取数据 / Extracted data: 2014M07: 1.7004 $/kg
+📈 提取数据 / Extracted data: 2014M08: 1.6661 $/kg
+📈 提取数据 / Extracted data: 2014M09: 1.5319 $/kg
+📈 提取数据 / Extracted data: 2014M10: 1.5061 $/kg
+📈 提取数据 / Extracted data: 2014M11: 1.5370 $/kg
+📈 提取数据 / Extracted data: 2014M12: 1.4711 $/kg
+📈 提取数据 / Extracted data: 2015M01: 1.4198 $/kg
+📈 提取数据 / Extracted data: 2015M02: 1.4293 $/kg
+📈 提取数据 / Extracted data: 2015M03: 1.4297 $/kg
+📈 提取数据 / Extracted data: 2015M04: 1.4071 $/kg
+📈 提取数据 / Extracted data: 2015M05: 1.5501 $/kg
+📈 提取数据 / Extracted data: 2015M06: 1.5829 $/kg
+📈 提取数据 / Extracted data: 2015M07: 1.4531 $/kg
+📈 提取数据 / Extracted data: 2015M08: 1.3140 $/kg
+📈 提取数据 / Extracted data: 2015M09: 1.2393 $/kg
+📈 提取数据 / Extracted data: 2015M10: 1.2424 $/kg
+📈 提取数据 / Extracted data: 2015M11: 1.1610 $/kg
+📈 提取数据 / Extracted data: 2015M12: 1.1611 $/kg
+📈 提取数据 / Extracted data: 2016M01: 1.0829 $/kg
+📈 提取数据 / Extracted data: 2016M02: 1.0963 $/kg
+📈 提取数据 / Extracted data: 2016M03: 1.2835 $/kg
+📈 提取数据 / Extracted data: 2016M04: 1.4886 $/kg
+📈 提取数据 / Extracted data: 2016M05: 1.3583 $/kg
+📈 提取数据 / Extracted data: 2016M06: 1.2641 $/kg
+📈 提取数据 / Extracted data: 2016M07: 1.2816 $/kg
+📈 提取数据 / Extracted data: 2016M08: 1.2973 $/kg
+📈 提取数据 / Extracted data: 2016M09: 1.3577 $/kg
+📈 提取数据 / Extracted data: 2016M10: 1.4766 $/kg
+📈 提取数据 / Extracted data: 2016M11: 1.6586 $/kg
+📈 提取数据 / Extracted data: 2016M12: 1.9280 $/kg
+📈 提取数据 / Extracted data: 2017M01: 2.1623 $/kg
+📈 提取数据 / Extracted data: 2017M02: 2.2329 $/kg
+📈 提取数据 / Extracted data: 2017M03: 1.9660 $/kg
+📈 提取数据 / Extracted data: 2017M04: 1.6543 $/kg
+📈 提取数据 / Extracted data: 2017M05: 1.5306 $/kg
+📈 提取数据 / Extracted data: 2017M06: 1.4397 $/kg
+📈 提取数据 / Extracted data: 2017M07: 1.5166 $/kg
+📈 提取数据 / Extracted data: 2017M08: 1.5462 $/kg
+📈 提取数据 / Extracted data: 2017M09: 1.6082 $/kg
+📈 提取数据 / Extracted data: 2017M10: 1.4569 $/kg
+📈 提取数据 / Extracted data: 2017M11: 1.4286 $/kg
+📈 提取数据 / Extracted data: 2017M12: 1.4600 $/kg
+📈 提取数据 / Extracted data: 2018M01: 1.5021 $/kg
+📈 提取数据 / Extracted data: 2018M02: 1.4618 $/kg
+📈 提取数据 / Extracted data: 2018M03: 1.4405 $/kg
+📈 提取数据 / Extracted data: 2018M04: 1.3914 $/kg
+📈 提取数据 / Extracted data: 2018M05: 1.4392 $/kg
+📈 提取数据 / Extracted data: 2018M06: 1.3806 $/kg
+📈 提取数据 / Extracted data: 2018M07: 1.3112 $/kg
+📈 提取数据 / Extracted data: 2018M08: 1.3399 $/kg
+📈 提取数据 / Extracted data: 2018M09: 1.3341 $/kg
+📈 提取数据 / Extracted data: 2018M10: 1.3172 $/kg
+📈 提取数据 / Extracted data: 2018M11: 1.2346 $/kg
+📈 提取数据 / Extracted data: 2018M12: 1.2614 $/kg
+📈 提取数据 / Extracted data: 2019M01: 1.3562 $/kg
+📈 提取数据 / Extracted data: 2019M02: 1.3987 $/kg
+📈 提取数据 / Extracted data: 2019M03: 1.4705 $/kg
+📈 提取数据 / Extracted data: 2019M04: 1.5036 $/kg
+📈 提取数据 / Extracted data: 2019M05: 1.4958 $/kg
+📈 提取数据 / Extracted data: 2019M06: 1.5012 $/kg
+📈 提取数据 / Extracted data: 2019M07: 1.4112 $/kg
+📈 提取数据 / Extracted data: 2019M08: 1.3102 $/kg
+📈 提取数据 / Extracted data: 2019M09: 1.3350 $/kg
+📈 提取数据 / Extracted data: 2019M10: 1.2978 $/kg
+📈 提取数据 / Extracted data: 2019M11: 1.3857 $/kg
+📈 提取数据 / Extracted data: 2019M12: 1.4594 $/kg
+📈 提取数据 / Extracted data: 2020M01: 1.4660 $/kg
+📈 提取数据 / Extracted data: 2020M02: 1.3412 $/kg
+📈 提取数据 / Extracted data: 2020M03: 1.2095 $/kg
+📈 提取数据 / Extracted data: 2020M04: 1.1067 $/kg
+📈 提取数据 / Extracted data: 2020M05: 1.1178 $/kg
+📈 提取数据 / Extracted data: 2020M06: 1.1731 $/kg
+📈 提取数据 / Extracted data: 2020M07: 1.2003 $/kg
+📈 提取数据 / Extracted data: 2020M08: 1.3214 $/kg
+📈 提取数据 / Extracted data: 2020M09: 1.3705 $/kg
+📈 提取数据 / Extracted data: 2020M10: 1.5285 $/kg
+📈 提取数据 / Extracted data: 2020M11: 1.5592 $/kg
+📈 提取数据 / Extracted data: 2020M12: 1.5724 $/kg
+📈 提取数据 / Extracted data: 2021M01: 1.5943 $/kg
+📈 提取数据 / Extracted data: 2021M02: 1.6803 $/kg
+📈 提取数据 / Extracted data: 2021M03: 1.7435 $/kg
+📈 提取数据 / Extracted data: 2021M04: 1.6424 $/kg
+📈 提取数据 / Extracted data: 2021M05: 1.6913 $/kg
+📈 提取数据 / Extracted data: 2021M06: 1.6381 $/kg
+📈 提取数据 / Extracted data: 2021M07: 1.6312 $/kg
+📈 提取数据 / Extracted data: 2021M08: 1.7064 $/kg
+📈 提取数据 / Extracted data: 2021M09: 1.6255 $/kg
+📈 提取数据 / Extracted data: 2021M10: 1.7317 $/kg
+📈 提取数据 / Extracted data: 2021M11: 1.7448 $/kg
+📈 提取数据 / Extracted data: 2021M12: 1.7222 $/kg
+📈 提取数据 / Extracted data: 2022M01: 1.7791 $/kg
+📈 提取数据 / Extracted data: 2022M02: 1.7905 $/kg
+📈 提取数据 / Extracted data: 2022M03: 1.7454 $/kg
+📈 提取数据 / Extracted data: 2022M04: 1.7027 $/kg
+📈 提取数据 / Extracted data: 2022M05: 1.6174 $/kg
+📈 提取数据 / Extracted data: 2022M06: 1.6362 $/kg
+📈 提取数据 / Extracted data: 2022M07: 1.5561 $/kg
+📈 提取数据 / Extracted data: 2022M08: 1.4623 $/kg
+📈 提取数据 / Extracted data: 2022M09: 1.3227 $/kg
+📈 提取数据 / Extracted data: 2022M10: 1.2885 $/kg
+📈 提取数据 / Extracted data: 2022M11: 1.2700 $/kg
+📈 提取数据 / Extracted data: 2022M12: 1.3461 $/kg
+📈 提取数据 / Extracted data: 2023M01: 1.4117 $/kg
+📈 提取数据 / Extracted data: 2023M02: 1.4012 $/kg
+📈 提取数据 / Extracted data: 2023M03: 1.3574 $/kg
+📈 提取数据 / Extracted data: 2023M04: 1.3581 $/kg
+📈 提取数据 / Extracted data: 2023M05: 1.3505 $/kg
+📈 提取数据 / Extracted data: 2023M06: 1.3188 $/kg
+📈 提取数据 / Extracted data: 2023M07: 1.2992 $/kg
+📈 提取数据 / Extracted data: 2023M08: 1.2924 $/kg
+📈 提取数据 / Extracted data: 2023M09: 1.4182 $/kg
+📈 提取数据 / Extracted data: 2023M10: 1.4481 $/kg
+📈 提取数据 / Extracted data: 2023M11: 1.4801 $/kg
+📈 提取数据 / Extracted data: 2023M12: 1.4568 $/kg
+📈 提取数据 / Extracted data: 2024M01: 1.5299 $/kg
+📈 提取数据 / Extracted data: 2024M02: 1.5589 $/kg
+📈 提取数据 / Extracted data: 2024M03: 1.6498 $/kg
+📈 提取数据 / Extracted data: 2024M04: 1.6294 $/kg
+📈 提取数据 / Extracted data: 2024M05: 1.6934 $/kg
+📈 提取数据 / Extracted data: 2024M06: 1.7532 $/kg
+📈 提取数据 / Extracted data: 2024M07: 1.6503 $/kg
+📈 提取数据 / Extracted data: 2024M08: 1.7374 $/kg
+📈 提取数据 / Extracted data: 2024M09: 1.9068 $/kg
+📈 提取数据 / Extracted data: 2024M10: 2.0093 $/kg
+📈 提取数据 / Extracted data: 2024M11: 1.9321 $/kg
+📈 提取数据 / Extracted data: 2024M12: 1.9937 $/kg
+📈 提取数据 / Extracted data: 2025M01: 1.9328 $/kg
+📈 提取数据 / Extracted data: 2025M02: 2.0051 $/kg
+📈 提取数据 / Extracted data: 2025M03: 1.9816 $/kg
+📈 提取数据 / Extracted data: 2025M04: 1.7065 $/kg
+📈 提取数据 / Extracted data: 2025M05: 1.7031 $/kg
+✅ 数据提取完成 / Data extraction completed: 317 条记录 / records
+
+📝 保存结果到文件 / Saving results to file: rubber_prices.txt
+✅ 结果已保存 / Results saved: 317 条记录 / records
+
+📊 橡胶价格数据 / Rubber Price Data (前10条 / First 10):
+==================================================
+1999M01: 0.5979 $/kg
+1999M02: 0.5587 $/kg
+1999M03: 0.5224 $/kg
+1999M04: 0.5236 $/kg
+1999M05: 0.5505 $/kg
+1999M06: 0.5540 $/kg
+1999M07: 0.5109 $/kg
+1999M08: 0.5392 $/kg
+1999M09: 0.5967 $/kg
+1999M10: 0.6793 $/kg
+...
+
+📊 橡胶价格数据 / Rubber Price Data (后10条 / Last 10):
+==================================================
+2024M08: 1.7374 $/kg
+2024M09: 1.9068 $/kg
+2024M10: 2.0093 $/kg
+2024M11: 1.9321 $/kg
+2024M12: 1.9937 $/kg
+2025M01: 1.9328 $/kg
+2025M02: 2.0051 $/kg
+2025M03: 1.9816 $/kg
+2025M04: 1.7065 $/kg
+2025M05: 1.7031 $/kg
+
+🎉 程序执行完成 / Program completed successfully!
+📁 输出文件 / Output file: rubber_prices.txt
+📊 数据记录数 / Data records: 317
+
+2025-07-02 10:26:01,626 - INFO - ✅ 模块执行成功 / Module executed successfully: Commodity Price Crawler
+2025-07-02 10:26:01,626 - INFO - 📤 处理输出文件 / Processing output files...
+2025-07-02 10:26:01,629 - INFO - 📈 获取到 317 条数据记录 / Retrieved 317 data records
+2025-07-02 10:26:01,629 - INFO - ==================================================
+2025-07-02 10:26:01,629 - INFO - 
+📊 [2/4] 执行模块 / Executing module: BLS Data Scraper (BLS数据爬虫)
+2025-07-02 10:26:01,629 - INFO - 📁 脚本路径 / Script path: func2/bls_scraper_auto.py
+2025-07-02 10:26:01,629 - INFO - 开始执行脚本 / Starting script: func2/bls_scraper_auto.py
+2025-07-02 10:26:01,629 - INFO - 切换到目录 / Changed to directory: func2
+2025-07-02 10:27:31,259 - INFO - 脚本执行成功 / Script executed successfully: func2/bls_scraper_auto.py
+2025-07-02 10:27:31,259 - INFO - ✅ 模块执行成功 / Module executed successfully: BLS Data Scraper
+2025-07-02 10:27:31,259 - INFO - 📤 处理输出文件 / Processing output files...
+2025-07-02 10:27:31,269 - INFO - 成功读取Excel文件 / Successfully read Excel file: func2/output/combined_data.xlsx
+2025-07-02 10:27:31,269 - INFO - 数据形状 / Data shape: (138, 5)
+2025-07-02 10:27:31,270 - WARNING - 输出文件不存在 / Output file does not exist: func2/bls_data.xlsx
+2025-07-02 10:27:31,270 - INFO - 📈 获取到 138 条数据记录 / Retrieved 138 data records
+2025-07-02 10:27:31,270 - INFO - ==================================================
+2025-07-02 10:27:31,270 - INFO - 
+📊 [3/4] 执行模块 / Executing module: Exchange Rate Scraper (汇率数据爬虫)
+2025-07-02 10:27:31,270 - INFO - 📁 脚本路径 / Script path: func3/exchange_rate_scraper.py
+2025-07-02 10:27:31,270 - INFO - 开始执行脚本 / Starting script: func3/exchange_rate_scraper.py
+2025-07-02 10:27:31,270 - INFO - 切换到目录 / Changed to directory: func3
+2025-07-02 10:27:38,953 - INFO - 脚本执行成功 / Script executed successfully: func3/exchange_rate_scraper.py
+2025-07-02 10:27:38,953 - INFO - 输出 / Output:
+USD到EUR汇率数据爬虫 / USD to EUR Exchange Rate Scraper
+============================================================
+目标年份 / Target years: 2021 - 2025
+输出文件 / Output files: exchange_rates.txt, exchange_rates.xlsx
+============================================================
+开始爬取汇率数据... / Starting to scrape exchange rate data...
+==================================================
+
+处理年份 / Processing year: 2021
+正在访问 / Fetching: https://www.x-rates.com/average/?from=USD&to=EUR&amount=1&year=2021 (尝试 1/3)
+找到 12 个月份元素和 12 个汇率元素 / Found 12 month elements and 12 rate elements
+提取数据 / Extracted data: 2021M01 -> 0.821704
+提取数据 / Extracted data: 2021M02 -> 0.826723
+提取数据 / Extracted data: 2021M03 -> 0.839597
+提取数据 / Extracted data: 2021M04 -> 0.836743
+提取数据 / Extracted data: 2021M05 -> 0.823758
+提取数据 / Extracted data: 2021M06 -> 0.830102
+提取数据 / Extracted data: 2021M07 -> 0.845531
+提取数据 / Extracted data: 2021M08 -> 0.849518
+提取数据 / Extracted data: 2021M09 -> 0.849032
+提取数据 / Extracted data: 2021M10 -> 0.862206
+提取数据 / Extracted data: 2021M11 -> 0.876354
+提取数据 / Extracted data: 2021M12 -> 0.884622
+年份 2021 提取了 12 条记录 / Year 2021 extracted 12 records
+
+处理年份 / Processing year: 2022
+正在访问 / Fetching: https://www.x-rates.com/average/?from=USD&to=EUR&amount=1&year=2022 (尝试 1/3)
+找到 12 个月份元素和 12 个汇率元素 / Found 12 month elements and 12 rate elements
+提取数据 / Extracted data: 2022M01 -> 0.882991
+提取数据 / Extracted data: 2022M02 -> 0.881757
+提取数据 / Extracted data: 2022M03 -> 0.908265
+提取数据 / Extracted data: 2022M04 -> 0.923303
+提取数据 / Extracted data: 2022M05 -> 0.946206
+提取数据 / Extracted data: 2022M06 -> 0.945712
+提取数据 / Extracted data: 2022M07 -> 0.980067
+提取数据 / Extracted data: 2022M08 -> 0.987932
+提取数据 / Extracted data: 2022M09 -> 1.008235
+提取数据 / Extracted data: 2022M10 -> 1.017115
+提取数据 / Extracted data: 2022M11 -> 0.979964
+提取数据 / Extracted data: 2022M12 -> 0.944770
+年份 2022 提取了 12 条记录 / Year 2022 extracted 12 records
+
+处理年份 / Processing year: 2023
+正在访问 / Fetching: https://www.x-rates.com/average/?from=USD&to=EUR&amount=1&year=2023 (尝试 1/3)
+找到 12 个月份元素和 12 个汇率元素 / Found 12 month elements and 12 rate elements
+提取数据 / Extracted data: 2023M01 -> 0.927553
+提取数据 / Extracted data: 2023M02 -> 0.933614
+提取数据 / Extracted data: 2023M03 -> 0.934133
+提取数据 / Extracted data: 2023M04 -> 0.910962
+提取数据 / Extracted data: 2023M05 -> 0.918837
+提取数据 / Extracted data: 2023M06 -> 0.922745
+提取数据 / Extracted data: 2023M07 -> 0.904728
+提取数据 / Extracted data: 2023M08 -> 0.916236
+提取数据 / Extracted data: 2023M09 -> 0.935779
+提取数据 / Extracted data: 2023M10 -> 0.946433
+提取数据 / Extracted data: 2023M11 -> 0.925158
+提取数据 / Extracted data: 2023M12 -> 0.916024
+年份 2023 提取了 12 条记录 / Year 2023 extracted 12 records
+
+处理年份 / Processing year: 2024
+正在访问 / Fetching: https://www.x-rates.com/average/?from=USD&to=EUR&amount=1&year=2024 (尝试 1/3)
+找到 12 个月份元素和 12 个汇率元素 / Found 12 month elements and 12 rate elements
+提取数据 / Extracted data: 2024M01 -> 0.916002
+提取数据 / Extracted data: 2024M02 -> 0.926416
+提取数据 / Extracted data: 2024M03 -> 0.919929
+提取数据 / Extracted data: 2024M04 -> 0.932321
+提取数据 / Extracted data: 2024M05 -> 0.925324
+提取数据 / Extracted data: 2024M06 -> 0.928905
+提取数据 / Extracted data: 2024M07 -> 0.921567
+提取数据 / Extracted data: 2024M08 -> 0.907876
+提取数据 / Extracted data: 2024M09 -> 0.900302
+提取数据 / Extracted data: 2024M10 -> 0.917120
+提取数据 / Extracted data: 2024M11 -> 0.940202
+提取数据 / Extracted data: 2024M12 -> 0.954297
+年份 2024 提取了 12 条记录 / Year 2024 extracted 12 records
+
+处理年份 / Processing year: 2025
+正在访问 / Fetching: https://www.x-rates.com/average/?from=USD&to=EUR&amount=1&year=2025 (尝试 1/3)
+找到 7 个月份元素和 7 个汇率元素 / Found 7 month elements and 7 rate elements
+提取数据 / Extracted data: 2025M01 -> 0.966388
+提取数据 / Extracted data: 2025M02 -> 0.960447
+提取数据 / Extracted data: 2025M03 -> 0.926906
+提取数据 / Extracted data: 2025M04 -> 0.891211
+提取数据 / Extracted data: 2025M05 -> 0.886863
+提取数据 / Extracted data: 2025M06 -> 0.868230
+提取数据 / Extracted data: 2025M07 -> 0.848411
+年份 2025 提取了 7 条记录 / Year 2025 extracted 7 records
+数据已保存到文件 / Data saved to file: exchange_rates.txt
+Excel数据已保存到文件 / Excel data saved to file: exchange_rates.xlsx
+
+============================================================
+数据汇总 / Data Summary
+============================================================
+年份 / Year 2021: 12 条记录 / records
+  数据 / Data:
+    2021M01 0.821704
+    2021M02 0.826723
+    2021M03 0.839597
+    2021M04 0.836743
+    2021M05 0.823758
+    2021M06 0.830102
+    2021M07 0.845531
+    2021M08 0.849518
+    2021M09 0.849032
+    2021M10 0.862206
+    2021M11 0.876354
+    2021M12 0.884622
+
+年份 / Year 2022: 12 条记录 / records
+  数据 / Data:
+    2022M01 0.882991
+    2022M02 0.881757
+    2022M03 0.908265
+    2022M04 0.923303
+    2022M05 0.946206
+    2022M06 0.945712
+    2022M07 0.980067
+    2022M08 0.987932
+    2022M09 1.008235
+    2022M10 1.017115
+    2022M11 0.979964
+    2022M12 0.944770
+
+年份 / Year 2023: 12 条记录 / records
+  数据 / Data:
+    2023M01 0.927553
+    2023M02 0.933614
+    2023M03 0.934133
+    2023M04 0.910962
+    2023M05 0.918837
+    2023M06 0.922745
+    2023M07 0.904728
+    2023M08 0.916236
+    2023M09 0.935779
+    2023M10 0.946433
+    2023M11 0.925158
+    2023M12 0.916024
+
+年份 / Year 2024: 12 条记录 / records
+  数据 / Data:
+    2024M01 0.916002
+    2024M02 0.926416
+    2024M03 0.919929
+    2024M04 0.932321
+    2024M05 0.925324
+    2024M06 0.928905
+    2024M07 0.921567
+    2024M08 0.907876
+    2024M09 0.900302
+    2024M10 0.917120
+    2024M11 0.940202
+    2024M12 0.954297
+
+年份 / Year 2025: 7 条记录 / records
+  数据 / Data:
+    2025M01 0.966388
+    2025M02 0.960447
+    2025M03 0.926906
+    2025M04 0.891211
+    2025M05 0.886863
+    2025M06 0.868230
+    2025M07 0.848411
+
+总计 / Total: 55 条记录 / records
+============================================================
+
+脚本执行完成！/ Script execution completed!
+
+2025-07-02 10:27:38,953 - INFO - ✅ 模块执行成功 / Module executed successfully: Exchange Rate Scraper
+2025-07-02 10:27:38,953 - INFO - 📤 处理输出文件 / Processing output files...
+2025-07-02 10:27:38,959 - INFO - 成功读取Excel文件 / Successfully read Excel file: func3/exchange_rates.xlsx
+2025-07-02 10:27:38,959 - INFO - 数据形状 / Data shape: (55, 5)
+2025-07-02 10:27:38,960 - INFO - 📈 获取到 55 条数据记录 / Retrieved 55 data records
+2025-07-02 10:27:38,960 - INFO - ==================================================
+2025-07-02 10:27:38,960 - INFO - 
+📊 [4/4] 执行模块 / Executing module: FRED Data Scraper (FRED数据爬虫)
+2025-07-02 10:27:38,960 - INFO - 📁 脚本路径 / Script path: func4/run.py
+2025-07-02 10:27:38,960 - INFO - 开始执行脚本 / Starting script: func4/run.py
+2025-07-02 10:27:38,960 - INFO - 切换到目录 / Changed to directory: func4
+2025-07-02 10:27:44,236 - INFO - 脚本执行成功 / Script executed successfully: func4/run.py
+2025-07-02 10:27:44,237 - INFO - 输出 / Output:
+🚀 FRED数据爬取器
+⏰ 运行时间: 2025-07-02 10:27:38
+==================================================
+📊 开始爬取FRED数据...
+📁 输出目录: output
+
+✅ 数据爬取完成！
+📁 查看输出文件: output/
+   - PCU314994314994.xlsx (原始下载文件)
+   - PCU314994314994_processed.xlsx (处理后文件)
+
+2025-07-02 10:27:44,237 - INFO - ✅ 模块执行成功 / Module executed successfully: FRED Data Scraper
+2025-07-02 10:27:44,237 - INFO - 📤 处理输出文件 / Processing output files...
+2025-07-02 10:27:44,242 - INFO - 成功读取Excel文件 / Successfully read Excel file: func4/output/PCU314994314994_processed.xlsx
+2025-07-02 10:27:44,242 - INFO - 数据形状 / Data shape: (167, 1)
+2025-07-02 10:27:44,244 - INFO - 成功读取Excel文件 / Successfully read Excel file: func4/output/PCU314994314994.xlsx
+2025-07-02 10:27:44,244 - INFO - 数据形状 / Data shape: (7, 3)
+2025-07-02 10:27:44,247 - INFO - 📈 获取到 174 条数据记录 / Retrieved 174 data records
+2025-07-02 10:27:44,247 - INFO - ==================================================
+2025-07-02 10:27:44,247 - INFO - 
+📋 创建整合Excel文件 / Creating integrated Excel file...
+2025-07-02 10:27:44,249 - INFO - 创建汇总工作表 / Created summary worksheet
+2025-07-02 10:27:44,252 - INFO - 写入数据到工作表 / Wrote data to worksheet: Rubber_Prices (317 行记录 / records)
+2025-07-02 10:27:44,254 - INFO - 写入数据到工作表 / Wrote data to worksheet: BLS_Data (138 行记录 / records)
+2025-07-02 10:27:44,256 - INFO - 写入数据到工作表 / Wrote data to worksheet: Exchange_Rates (55 行记录 / records)
+2025-07-02 10:27:44,259 - INFO - 写入数据到工作表 / Wrote data to worksheet: FRED_Data (174 行记录 / records)
+2025-07-02 10:27:44,273 - INFO - 整合Excel文件创建成功 / Integrated Excel file created successfully: integrated_data.xlsx
+2025-07-02 10:27:44,273 - INFO - 
+================================================================================
+2025-07-02 10:27:44,273 - INFO - 🎉 数据整合程序完成 / Data Integration Program Completed
+2025-07-02 10:27:44,273 - INFO - ================================================================================
+2025-07-02 10:27:44,273 - INFO - ⏱️  总耗时 / Total duration: 0:01:43.178746
+2025-07-02 10:27:44,273 - INFO - 📁 输出文件 / Output file: integrated_data.xlsx
+2025-07-02 10:27:44,273 - INFO - 📊 执行结果 / Execution results: 4/4 成功 / successful
+2025-07-02 10:27:44,273 - INFO -    Commodity Price Crawler: ✅ 成功 / Success
+2025-07-02 10:27:44,273 - INFO -    BLS Data Scraper: ✅ 成功 / Success
+2025-07-02 10:27:44,273 - INFO -    Exchange Rate Scraper: ✅ 成功 / Success
+2025-07-02 10:27:44,273 - INFO -    FRED Data Scraper: ✅ 成功 / Success
+2025-07-02 10:27:44,273 - INFO - 🎊 所有模块执行成功！/ All modules executed successfully!
+2025-07-02 10:27:44,273 - INFO - ================================================================================

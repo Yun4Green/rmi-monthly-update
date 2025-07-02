@@ -1,0 +1,947 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>橡胶价格数据可视化 / Rubber Price Data Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #FF9500 0%, #FF6B35 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-title {
+            font-size: 1.1em;
+            color: #666;
+            margin: 0 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .card-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            color: #FF9500;
+        }
+        
+        .card-meta {
+            font-size: 0.9em;
+            color: #888;
+            margin: 0 0 15px 0;
+        }
+        
+        .card-change {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .change-positive {
+            color: #4CAF50;
+        }
+        
+        .change-negative {
+            color: #F44336;
+        }
+        
+        .change-neutral {
+            color: #FF9800;
+        }
+        
+        .chart-container {
+            padding: 30px;
+            background: white;
+        }
+        
+        .chart-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.5em;
+            color: #333;
+        }
+        
+        #rubberChart {
+            max-height: 400px;
+        }
+        
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+        
+        .trend-arrow {
+            font-size: 1.5em;
+            margin-left: 10px;
+        }
+        
+        .source-links {
+            margin-top: 15px;
+        }
+        
+        .source-links a {
+            color: #FF9500;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        .source-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .prev-value {
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 5px;
+        }
+        
+        .table-container {
+            padding: 30px;
+            background: white;
+        }
+        
+        .table-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.5em;
+            color: #333;
+        }
+        
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+            background: white;
+        }
+        
+        .price-table th {
+            background: linear-gradient(135deg, #FF9500 0%, #FF6B35 100%);
+            color: white;
+            padding: 12px 8px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        .price-table th:first-child {
+            text-align: left;
+            padding-left: 15px;
+        }
+        
+        .price-table td {
+            padding: 10px 8px;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.3s ease;
+        }
+        
+        .price-table tr:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .price-table .year-label {
+            background: #f8f9fa;
+            font-weight: 600;
+            text-align: left;
+            padding-left: 15px;
+            color: #333;
+        }
+        
+        .price-table .current-month {
+            background: #fff3cd;
+            font-weight: 600;
+            color: #856404;
+        }
+        
+        .price-table td:not(.year-label):not(.current-month) {
+            font-family: 'Monaco', 'Consolas', monospace;
+        }
+        
+        @media (max-width: 768px) {
+            .table-container {
+                padding: 20px 10px;
+            }
+            
+            .price-table {
+                font-size: 0.8em;
+            }
+            
+            .price-table th,
+            .price-table td {
+                padding: 8px 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>橡胶价格分析</h1>
+            <p>Rubber Price Analysis Dashboard</p>
+        </div>
+        
+        <div class="cards-container">
+            <div class="card">
+                <h3 class="card-title">当前价格 / Current Price</h3>
+                <div class="card-value">$1.7031</div>
+                <p class="card-meta">2025年5月 | USD/公斤 USD/kg</p>
+            </div>
+            
+            <div class="card">
+                <h3 class="card-title">环比变化 / Month-over-Month</h3>
+                <div class="card-value">$1.7065</div>
+                <p class="card-change change-negative">
+                    -0.20% 
+                    <span class="trend-arrow">↘️</span>
+                </p>
+            </div>
+            
+            <div class="card">
+                <h3 class="card-title">同比变化 / Year-over-Year</h3>
+                <div class="card-value">$1.6934</div>
+                <p class="card-change change-positive">
+                    +0.57%
+                    <span class="trend-arrow">↗️</span>
+                </p>
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <h2 class="chart-title">橡胶价格趋势图 / Rubber Price Trend Chart (2015-2025)</h2>
+            <canvas id="rubberChart"></canvas>
+        </div>
+        
+        <div class="table-container">
+            <h2 class="table-title">橡胶价格数据表 / Rubber Price Data Table (USD/kg)</h2>
+            <div class="table-wrapper">
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Year/Month</th>
+                            <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th>
+                            <th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="year-label">2015</td>
+                            <td>1.4198</td><td>1.4293</td><td>1.4297</td><td>1.4071</td><td>1.5501</td><td>1.5829</td>
+                            <td>1.4531</td><td>1.3140</td><td>1.2393</td><td>1.2424</td><td>1.1610</td><td>1.1611</td>
+                        </tr>
+                        <tr>
+                            <td class="year-label">2016</td>
+                            <td>1.0829</td><td>1.0963</td><td>1.2835</td><td>1.4886</td><td>1.3583</td><td>1.2641</td>
+                            <td>1.2816</td><td>1.2973</td><td>1.3577</td><td>1.4766</td><td>1.6586</td><td>1.9280</td>
+                        </tr>
+                        <tr>
+                            <td class="year-label">2017</td>
+                            <td>2.1623</td><td>2.2329</td><td>1.9660</td><td>1.6543</td><td>1.5306</td><td>1.4397</td>
+                            <td>1.5166</td><td>1.5462</td><td>1.6082</td><td>1.4569</td><td>1.4286</td><td>1.4600</td>
+                        </tr>
+                        <tr>
+                            <td class="year-label">2018</td>
+                            <td>1.5021</td><td>1.4618</td><td>1.4405</td><td>1.3914</td><td>1.4392</td><td>1.3806</td>
+                            <td>1.3112</td><td>1.3399</td><td>1.3341</td><td>1.3172</td><td>1.2346</td><td>1.2614</td>
+                        </tr>
+                        <tr>
+                            <td class="year-label">2019</td>
+                            <td>1.3562</td><td>1.3987</td><td>1.4705</td><td>1.5036</td><td>1.4958</td><td>1.5012</td>
+                            <td>1.4112</td><td>1.3102</td><td>1.3350</td><td>1.2978</td><td>1.3857</td><td>1.4594</td>
+                        </tr>
+                        <tr>
+                            <td class="year-label">2020</td>
+                            <td>1.4660</td><td>1.3412</td><td>1.2095</td><td>1.1067</td><td>1.1178</td><td>1.1731</td>
+                            <td>1.2003</td><td>1.3214</td><td>1.3705</td><td>1.5285</td><td>1.5592</td><td>1.5724</td>
+                        </tr>
+                        <tr>
+                            <td class="year-label">2021</td>
+                            <td>1.5943</td><td>1.6803</td><td>1.7435</td><td>1.6424</td><td>1.6913</td><td>1.6381</td>
+                            <td>1.6312</td><td>1.7064</td><td>1.6255</td><td>1.7317</td><td>1.7448</td><td>1.7222</td>
+                        </tr>
+                        <tr>
+                            <td class="year-label">2022</td>
+                            <td>1.7791</td><td>1.7905</td><td>1.7454</td><td>1.7027</td><td>1.6174</td><td>1.6362</td>
+                            <td>1.5561</td><td>1.4623</td><td>1.3227</td><td>1.2885</td><td>1.2700</td><td>1.3461</td>
+                        </tr>
+                        <tr>
+                            <td class="year-label">2023</td>
+                            <td>1.4117</td><td>1.4012</td><td>1.3574</td><td>1.3581</td><td>1.3505</td><td>1.3188</td>
+                            <td>1.2992</td><td>1.2924</td><td>1.4182</td><td>1.4481</td><td>1.4801</td><td>1.4568</td>
+                        </tr>
+                        <tr>
+                            <td class="year-label">2024</td>
+                            <td>1.5299</td><td>1.5589</td><td>1.6498</td><td>1.6294</td><td>1.6934</td><td>1.7532</td>
+                            <td>1.6503</td><td>1.7374</td><td>1.9068</td><td>2.0093</td><td>1.9321</td><td>1.9937</td>
+                        </tr>
+                        <tr>
+                            <td class="year-label">2025</td>
+                            <td>1.9328</td><td>2.0051</td><td>1.9816</td><td>1.7065</td><td class="current-month">1.7031</td><td>-</td>
+                            <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>数据来源 / Data Sources:</p>
+            <div class="source-links">
+                <a href="https://www.worldbank.org/en/research/commodity-markets" target="_blank">World Bank - Commodity Markets Research</a>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.8em; color: #ccc;">
+                <strong>数据说明 / Data Description:</strong><br>
+                • 橡胶价格: TSR20橡胶现货价格 (美元/公斤) / Rubber Price: TSR20 Rubber Spot Price (USD/kg)<br>
+                • 数据来源: 世界银行商品市场研究数据库 / Data Source: World Bank Commodity Markets Research Database<br>
+                • 更新频率: 月度数据 / Update Frequency: Monthly Data
+            </p>
+            <p style="margin-top: 10px;">生成时间 / Generated: 2025-07-02 13:03:56</p>
+        </div>
+    </div>
+
+    <script>
+        // 图表配置和数据
+        const ctx = document.getElementById('rubberChart').getContext('2d');
+        const chartData = [
+        {
+                "x": "2015-01",
+                "y": 1.4198
+        },
+        {
+                "x": "2015-02",
+                "y": 1.4293
+        },
+        {
+                "x": "2015-03",
+                "y": 1.4297
+        },
+        {
+                "x": "2015-04",
+                "y": 1.4071
+        },
+        {
+                "x": "2015-05",
+                "y": 1.5501
+        },
+        {
+                "x": "2015-06",
+                "y": 1.5829
+        },
+        {
+                "x": "2015-07",
+                "y": 1.4531
+        },
+        {
+                "x": "2015-08",
+                "y": 1.314
+        },
+        {
+                "x": "2015-09",
+                "y": 1.2393
+        },
+        {
+                "x": "2015-10",
+                "y": 1.2424
+        },
+        {
+                "x": "2015-11",
+                "y": 1.161
+        },
+        {
+                "x": "2015-12",
+                "y": 1.1611
+        },
+        {
+                "x": "2016-01",
+                "y": 1.0829
+        },
+        {
+                "x": "2016-02",
+                "y": 1.0963
+        },
+        {
+                "x": "2016-03",
+                "y": 1.2835
+        },
+        {
+                "x": "2016-04",
+                "y": 1.4886
+        },
+        {
+                "x": "2016-05",
+                "y": 1.3583
+        },
+        {
+                "x": "2016-06",
+                "y": 1.2641
+        },
+        {
+                "x": "2016-07",
+                "y": 1.2816
+        },
+        {
+                "x": "2016-08",
+                "y": 1.2973
+        },
+        {
+                "x": "2016-09",
+                "y": 1.3577
+        },
+        {
+                "x": "2016-10",
+                "y": 1.4766
+        },
+        {
+                "x": "2016-11",
+                "y": 1.6586
+        },
+        {
+                "x": "2016-12",
+                "y": 1.928
+        },
+        {
+                "x": "2017-01",
+                "y": 2.1623
+        },
+        {
+                "x": "2017-02",
+                "y": 2.2329
+        },
+        {
+                "x": "2017-03",
+                "y": 1.966
+        },
+        {
+                "x": "2017-04",
+                "y": 1.6543
+        },
+        {
+                "x": "2017-05",
+                "y": 1.5306
+        },
+        {
+                "x": "2017-06",
+                "y": 1.4397
+        },
+        {
+                "x": "2017-07",
+                "y": 1.5166
+        },
+        {
+                "x": "2017-08",
+                "y": 1.5462
+        },
+        {
+                "x": "2017-09",
+                "y": 1.6082
+        },
+        {
+                "x": "2017-10",
+                "y": 1.4569
+        },
+        {
+                "x": "2017-11",
+                "y": 1.4286
+        },
+        {
+                "x": "2017-12",
+                "y": 1.46
+        },
+        {
+                "x": "2018-01",
+                "y": 1.5021
+        },
+        {
+                "x": "2018-02",
+                "y": 1.4618
+        },
+        {
+                "x": "2018-03",
+                "y": 1.4405
+        },
+        {
+                "x": "2018-04",
+                "y": 1.3914
+        },
+        {
+                "x": "2018-05",
+                "y": 1.4392
+        },
+        {
+                "x": "2018-06",
+                "y": 1.3806
+        },
+        {
+                "x": "2018-07",
+                "y": 1.3112
+        },
+        {
+                "x": "2018-08",
+                "y": 1.3399
+        },
+        {
+                "x": "2018-09",
+                "y": 1.3341
+        },
+        {
+                "x": "2018-10",
+                "y": 1.3172
+        },
+        {
+                "x": "2018-11",
+                "y": 1.2346
+        },
+        {
+                "x": "2018-12",
+                "y": 1.2614
+        },
+        {
+                "x": "2019-01",
+                "y": 1.3562
+        },
+        {
+                "x": "2019-02",
+                "y": 1.3987
+        },
+        {
+                "x": "2019-03",
+                "y": 1.4705
+        },
+        {
+                "x": "2019-04",
+                "y": 1.5036
+        },
+        {
+                "x": "2019-05",
+                "y": 1.4958
+        },
+        {
+                "x": "2019-06",
+                "y": 1.5012
+        },
+        {
+                "x": "2019-07",
+                "y": 1.4112
+        },
+        {
+                "x": "2019-08",
+                "y": 1.3102
+        },
+        {
+                "x": "2019-09",
+                "y": 1.335
+        },
+        {
+                "x": "2019-10",
+                "y": 1.2978
+        },
+        {
+                "x": "2019-11",
+                "y": 1.3857
+        },
+        {
+                "x": "2019-12",
+                "y": 1.4594
+        },
+        {
+                "x": "2020-01",
+                "y": 1.466
+        },
+        {
+                "x": "2020-02",
+                "y": 1.3412
+        },
+        {
+                "x": "2020-03",
+                "y": 1.2095
+        },
+        {
+                "x": "2020-04",
+                "y": 1.1067
+        },
+        {
+                "x": "2020-05",
+                "y": 1.1178
+        },
+        {
+                "x": "2020-06",
+                "y": 1.1731
+        },
+        {
+                "x": "2020-07",
+                "y": 1.2003
+        },
+        {
+                "x": "2020-08",
+                "y": 1.3214
+        },
+        {
+                "x": "2020-09",
+                "y": 1.3705
+        },
+        {
+                "x": "2020-10",
+                "y": 1.5285
+        },
+        {
+                "x": "2020-11",
+                "y": 1.5592
+        },
+        {
+                "x": "2020-12",
+                "y": 1.5724
+        },
+        {
+                "x": "2021-01",
+                "y": 1.5943
+        },
+        {
+                "x": "2021-02",
+                "y": 1.6803
+        },
+        {
+                "x": "2021-03",
+                "y": 1.7435
+        },
+        {
+                "x": "2021-04",
+                "y": 1.6424
+        },
+        {
+                "x": "2021-05",
+                "y": 1.6913
+        },
+        {
+                "x": "2021-06",
+                "y": 1.6381
+        },
+        {
+                "x": "2021-07",
+                "y": 1.6312
+        },
+        {
+                "x": "2021-08",
+                "y": 1.7064
+        },
+        {
+                "x": "2021-09",
+                "y": 1.6255
+        },
+        {
+                "x": "2021-10",
+                "y": 1.7317
+        },
+        {
+                "x": "2021-11",
+                "y": 1.7448
+        },
+        {
+                "x": "2021-12",
+                "y": 1.7222
+        },
+        {
+                "x": "2022-01",
+                "y": 1.7791
+        },
+        {
+                "x": "2022-02",
+                "y": 1.7905
+        },
+        {
+                "x": "2022-03",
+                "y": 1.7454
+        },
+        {
+                "x": "2022-04",
+                "y": 1.7027
+        },
+        {
+                "x": "2022-05",
+                "y": 1.6174
+        },
+        {
+                "x": "2022-06",
+                "y": 1.6362
+        },
+        {
+                "x": "2022-07",
+                "y": 1.5561
+        },
+        {
+                "x": "2022-08",
+                "y": 1.4623
+        },
+        {
+                "x": "2022-09",
+                "y": 1.3227
+        },
+        {
+                "x": "2022-10",
+                "y": 1.2885
+        },
+        {
+                "x": "2022-11",
+                "y": 1.27
+        },
+        {
+                "x": "2022-12",
+                "y": 1.3461
+        },
+        {
+                "x": "2023-01",
+                "y": 1.4117
+        },
+        {
+                "x": "2023-02",
+                "y": 1.4012
+        },
+        {
+                "x": "2023-03",
+                "y": 1.3574
+        },
+        {
+                "x": "2023-04",
+                "y": 1.3581
+        },
+        {
+                "x": "2023-05",
+                "y": 1.3505
+        },
+        {
+                "x": "2023-06",
+                "y": 1.3188
+        },
+        {
+                "x": "2023-07",
+                "y": 1.2992
+        },
+        {
+                "x": "2023-08",
+                "y": 1.2924
+        },
+        {
+                "x": "2023-09",
+                "y": 1.4182
+        },
+        {
+                "x": "2023-10",
+                "y": 1.4481
+        },
+        {
+                "x": "2023-11",
+                "y": 1.4801
+        },
+        {
+                "x": "2023-12",
+                "y": 1.4568
+        },
+        {
+                "x": "2024-01",
+                "y": 1.5299
+        },
+        {
+                "x": "2024-02",
+                "y": 1.5589
+        },
+        {
+                "x": "2024-03",
+                "y": 1.6498
+        },
+        {
+                "x": "2024-04",
+                "y": 1.6294
+        },
+        {
+                "x": "2024-05",
+                "y": 1.6934
+        },
+        {
+                "x": "2024-06",
+                "y": 1.7532
+        },
+        {
+                "x": "2024-07",
+                "y": 1.6503
+        },
+        {
+                "x": "2024-08",
+                "y": 1.7374
+        },
+        {
+                "x": "2024-09",
+                "y": 1.9068
+        },
+        {
+                "x": "2024-10",
+                "y": 2.0093
+        },
+        {
+                "x": "2024-11",
+                "y": 1.9321
+        },
+        {
+                "x": "2024-12",
+                "y": 1.9937
+        },
+        {
+                "x": "2025-01",
+                "y": 1.9328
+        },
+        {
+                "x": "2025-02",
+                "y": 2.0051
+        },
+        {
+                "x": "2025-03",
+                "y": 1.9816
+        },
+        {
+                "x": "2025-04",
+                "y": 1.7065
+        },
+        {
+                "x": "2025-05",
+                "y": 1.7031
+        }
+];
+        
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: chartData.map(item => item.x),
+                datasets: [{
+                    label: '橡胶价格 (USD/kg)',
+                    data: chartData.map(item => item.y),
+                    borderColor: '#FF9500',
+                    backgroundColor: 'rgba(255, 149, 0, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#FF9500',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointRadius: 4,
+                    pointHoverRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            usePointStyle: true,
+                            padding: 20,
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false,
+                        backgroundColor: 'rgba(0,0,0,0.8)',
+                        titleColor: '#fff',
+                        bodyColor: '#fff',
+                        borderColor: '#FF9500',
+                        borderWidth: 1,
+                        callbacks: {
+                            label: function(context) {
+                                return '橡胶价格: $' + context.parsed.y.toFixed(4) + '/kg';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            color: 'rgba(0,0,0,0.1)'
+                        },
+                        ticks: {
+                            maxTicksLimit: 15
+                        }
+                    },
+                    y: {
+                        grid: {
+                            color: 'rgba(0,0,0,0.1)'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value.toFixed(2);
+                            }
+                        }
+                    }
+                },
+                interaction: {
+                    mode: 'nearest',
+                    axis: 'x',
+                    intersect: false
+                }
+            }
+        });
+    </script>
+</body>
+</html>

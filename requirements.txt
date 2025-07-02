@@ -1,0 +1,26 @@
+# 数据整合系统依赖包 / Data Integration System Dependencies
+# 包含四个子模块的所有必需依赖 / Includes all required dependencies for four sub-modules
+
+# 核心数据处理库 / Core data processing libraries
+pandas>=2.0.0
+openpyxl>=3.1.0
+
+# HTTP请求库 / HTTP request libraries  
+requests>=2.31.0
+
+# 网页解析库 / Web parsing libraries
+beautifulsoup4>=4.9.3
+lxml>=4.6.3
+
+# 浏览器自动化库 / Browser automation libraries
+selenium>=4.15.0
+
+# WebDriver自动管理 / Automatic WebDriver management
+webdriver-manager>=3.8.0
+
+# 日志和调试 / Logging and debugging
+# (标准库，无需额外安装 / Standard library, no additional installation needed)
+
+# 系统相关 / System related
+# subprocess, os, sys, datetime - 标准库 / Standard library
+# pathlib - Python 3.4+ 标准库 / Python 3.4+ standard library 
