@@ -1,5 +1,10 @@
 # 📊 RMI Monthly Update
 
+> [!IMPORTANT]
+> This repository contains the legacy 2025 dashboard implementation and is archived for historical reference.
+> The maintained revision-aware monthly workflow is now available at
+> **[Yun4Green/rmi-reporting-workflow](https://github.com/Yun4Green/rmi-reporting-workflow)**.
+
 **Raw Materials Intelligence & Market Analysis Dashboard**
 
 A comprehensive real-time dashboard for monitoring tire industry raw material prices, exchange rates, and commodity indices.
